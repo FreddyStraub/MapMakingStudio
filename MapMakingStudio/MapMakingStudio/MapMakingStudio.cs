@@ -16,5 +16,63 @@ namespace MapMakingStudio
         {
             InitializeComponent();
         }
+
+        #region Move Form
+
+        private Point mouseposition;
+
+        private void HeaderBar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Point mousePos = Control.MousePosition;
+                mousePos.Offset(mouseposition.X, mouseposition.Y);
+                Location = mousePos;
+            }
+        }
+
+        private void HeaderBar_MouseDown(object sender, MouseEventArgs e)
+        {
+            mouseposition = new Point(-e.X, -e.Y);
+        }
+
+
+        #endregion
+
+        /// <summary>
+        /// Maximiert bzw. normalisiert übergebenes Formular
+        /// </summary>
+        /// <param name="frm">zu änderndes Formular</param>
+        private void maximizeWindow(Form frm)
+        {
+            if (frm.WindowState == FormWindowState.Maximized)
+            {
+                frm.WindowState = FormWindowState.Normal;
+            }
+            else
+            {
+                frm.WindowState = FormWindowState.Maximized;
+            }
+        }
+
+        private void bClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+        private void bMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
+        
+        private void bMaximize_Click(object sender, EventArgs e)
+        {
+            maximizeWindow(this);
+
+        }
+
+        private void panel1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            maximizeWindow(this);
+        }
     }
 }
