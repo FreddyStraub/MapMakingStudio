@@ -23,11 +23,17 @@ namespace MapMakingStudio
 
         private void HeaderBar_MouseMove(object sender, MouseEventArgs e)
         {
+     
+            
             if (e.Button == MouseButtons.Left)
             {
                 Point mousePos = Control.MousePosition;
                 mousePos.Offset(mouseposition.X, mouseposition.Y);
                 Location = mousePos;
+
+                if (WindowState == FormWindowState.Maximized)
+                    WindowState = FormWindowState.Normal;
+
             }
         }
 
@@ -48,10 +54,13 @@ namespace MapMakingStudio
             if (frm.WindowState == FormWindowState.Maximized)
             {
                 frm.WindowState = FormWindowState.Normal;
+                bMaximize.Image = Properties.Resources.maximizeIcon;
             }
             else
             {
                 frm.WindowState = FormWindowState.Maximized;
+                bMaximize.Image = Properties.Resources.maximizeIcon2;
+
             }
         }
 
