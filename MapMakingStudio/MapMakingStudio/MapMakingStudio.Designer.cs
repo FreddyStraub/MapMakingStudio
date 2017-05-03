@@ -37,13 +37,13 @@ namespace MapMakingStudio
             this.bMaximize = new Bunifu.Framework.UI.BunifuImageButton();
             this.bClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.lbMapMakingStudio = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelMenuBar = new System.Windows.Forms.Panel();
             this.bSuchen = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bEinstellungen = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bSnippets = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bBearbeiten = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bDatei = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panelMenuBar = new System.Windows.Forms.Panel();
+            this.panelTabBar = new System.Windows.Forms.Panel();
             this.bTab1 = new System.Windows.Forms.Button();
             this.panelTabs = new System.Windows.Forms.Panel();
             this.HeaderBar.SuspendLayout();
@@ -51,8 +51,8 @@ namespace MapMakingStudio
             ((System.ComponentModel.ISupportInitialize)(this.bMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bClose)).BeginInit();
-            this.panel1.SuspendLayout();
             this.panelMenuBar.SuspendLayout();
+            this.panelTabBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // HeaderBar
@@ -63,7 +63,7 @@ namespace MapMakingStudio
             this.HeaderBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.HeaderBar.Location = new System.Drawing.Point(0, 0);
             this.HeaderBar.Name = "HeaderBar";
-            this.HeaderBar.Size = new System.Drawing.Size(1149, 61);
+            this.HeaderBar.Size = new System.Drawing.Size(1122, 61);
             this.HeaderBar.TabIndex = 0;
             this.HeaderBar.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDoubleClick);
             this.HeaderBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HeaderBar_MouseDown);
@@ -75,7 +75,7 @@ namespace MapMakingStudio
             this.panelHeaderButtons.Controls.Add(this.bMaximize);
             this.panelHeaderButtons.Controls.Add(this.bClose);
             this.panelHeaderButtons.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelHeaderButtons.Location = new System.Drawing.Point(1015, 0);
+            this.panelHeaderButtons.Location = new System.Drawing.Point(988, 0);
             this.panelHeaderButtons.Name = "panelHeaderButtons";
             this.panelHeaderButtons.Size = new System.Drawing.Size(134, 61);
             this.panelHeaderButtons.TabIndex = 6;
@@ -137,19 +137,19 @@ namespace MapMakingStudio
             this.lbMapMakingStudio.TabIndex = 1;
             this.lbMapMakingStudio.Text = "MapMakingStudio by Wolf066LP";
             // 
-            // panel1
+            // panelMenuBar
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.panel1.Controls.Add(this.bSuchen);
-            this.panel1.Controls.Add(this.bEinstellungen);
-            this.panel1.Controls.Add(this.bSnippets);
-            this.panel1.Controls.Add(this.bBearbeiten);
-            this.panel1.Controls.Add(this.bDatei);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 61);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 547);
-            this.panel1.TabIndex = 8;
+            this.panelMenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panelMenuBar.Controls.Add(this.bSuchen);
+            this.panelMenuBar.Controls.Add(this.bEinstellungen);
+            this.panelMenuBar.Controls.Add(this.bSnippets);
+            this.panelMenuBar.Controls.Add(this.bBearbeiten);
+            this.panelMenuBar.Controls.Add(this.bDatei);
+            this.panelMenuBar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMenuBar.Location = new System.Drawing.Point(0, 61);
+            this.panelMenuBar.Name = "panelMenuBar";
+            this.panelMenuBar.Size = new System.Drawing.Size(200, 576);
+            this.panelMenuBar.TabIndex = 8;
             // 
             // bSuchen
             // 
@@ -321,15 +321,15 @@ namespace MapMakingStudio
             this.bDatei.Textcolor = System.Drawing.Color.White;
             this.bDatei.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // panelMenuBar
+            // panelTabBar
             // 
-            this.panelMenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panelMenuBar.Controls.Add(this.bTab1);
-            this.panelMenuBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMenuBar.Location = new System.Drawing.Point(200, 61);
-            this.panelMenuBar.Name = "panelMenuBar";
-            this.panelMenuBar.Size = new System.Drawing.Size(949, 32);
-            this.panelMenuBar.TabIndex = 9;
+            this.panelTabBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panelTabBar.Controls.Add(this.bTab1);
+            this.panelTabBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTabBar.Location = new System.Drawing.Point(200, 61);
+            this.panelTabBar.Name = "panelTabBar";
+            this.panelTabBar.Size = new System.Drawing.Size(922, 32);
+            this.panelTabBar.TabIndex = 9;
             // 
             // bTab1
             // 
@@ -347,10 +347,10 @@ namespace MapMakingStudio
             // 
             // panelTabs
             // 
-            this.panelTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTabs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.panelTabs.Location = new System.Drawing.Point(200, 93);
             this.panelTabs.Name = "panelTabs";
-            this.panelTabs.Size = new System.Drawing.Size(949, 515);
+            this.panelTabs.Size = new System.Drawing.Size(919, 541);
             this.panelTabs.TabIndex = 10;
             // 
             // MapMakingStudio
@@ -358,24 +358,25 @@ namespace MapMakingStudio
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(1149, 608);
+            this.ClientSize = new System.Drawing.Size(1122, 637);
             this.Controls.Add(this.panelTabs);
+            this.Controls.Add(this.panelTabBar);
             this.Controls.Add(this.panelMenuBar);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.HeaderBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(300, 300);
+            this.MinimumSize = new System.Drawing.Size(667, 334);
             this.Name = "MapMakingStudio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MapMakingStudio";
+            this.Resize += new System.EventHandler(this.MapMakingStudio_Resize);
             this.HeaderBar.ResumeLayout(false);
             this.HeaderBar.PerformLayout();
             this.panelHeaderButtons.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bMaximize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bClose)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.panelMenuBar.ResumeLayout(false);
+            this.panelTabBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -388,15 +389,15 @@ namespace MapMakingStudio
         private Bunifu.Framework.UI.BunifuImageButton bMaximize;
         private Bunifu.Framework.UI.BunifuImageButton bMinimize;
         private System.Windows.Forms.Panel panelHeaderButtons;
-        private System.Windows.Forms.Panel panel1;
-        private BunifuFlatButton bDatei;
         private System.Windows.Forms.Panel panelMenuBar;
+        private BunifuFlatButton bDatei;
+        private System.Windows.Forms.Panel panelTabBar;
         private System.Windows.Forms.Button bTab1;
-        private System.Windows.Forms.Panel panelTabs;
         private BunifuFlatButton bEinstellungen;
         private BunifuFlatButton bSnippets;
         private BunifuFlatButton bBearbeiten;
         private BunifuFlatButton bSuchen;
+        private System.Windows.Forms.Panel panelTabs;
     }
 }
 
