@@ -1,4 +1,6 @@
-﻿namespace MapMakingStudio
+﻿using Bunifu.Framework.UI;
+
+namespace MapMakingStudio
 {
     partial class MapMakingStudio
     {
@@ -35,17 +37,21 @@
             this.bMaximize = new Bunifu.Framework.UI.BunifuImageButton();
             this.bClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.lbMapMakingStudio = new System.Windows.Forms.Label();
-            this.panelTopSeprator = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.bSuchen = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bEinstellungen = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bSnippets = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bBearbeiten = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bDatei = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelMenuBar = new System.Windows.Forms.Panel();
-            this.bEInstellungen = new System.Windows.Forms.Button();
-            this.bSnippets = new System.Windows.Forms.Button();
-            this.bDatei = new System.Windows.Forms.Button();
-            this.panelMenuBarPlaceHolderLeft = new System.Windows.Forms.Panel();
+            this.bTab1 = new System.Windows.Forms.Button();
+            this.panelTabs = new System.Windows.Forms.Panel();
             this.HeaderBar.SuspendLayout();
             this.panelHeaderButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bMinimize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bMaximize)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bClose)).BeginInit();
+            this.panel1.SuspendLayout();
             this.panelMenuBar.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,9 +62,8 @@
             this.HeaderBar.Controls.Add(this.lbMapMakingStudio);
             this.HeaderBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.HeaderBar.Location = new System.Drawing.Point(0, 0);
-            this.HeaderBar.Margin = new System.Windows.Forms.Padding(6);
             this.HeaderBar.Name = "HeaderBar";
-            this.HeaderBar.Size = new System.Drawing.Size(2298, 117);
+            this.HeaderBar.Size = new System.Drawing.Size(1149, 61);
             this.HeaderBar.TabIndex = 0;
             this.HeaderBar.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDoubleClick);
             this.HeaderBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.HeaderBar_MouseDown);
@@ -70,10 +75,9 @@
             this.panelHeaderButtons.Controls.Add(this.bMaximize);
             this.panelHeaderButtons.Controls.Add(this.bClose);
             this.panelHeaderButtons.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelHeaderButtons.Location = new System.Drawing.Point(2030, 0);
-            this.panelHeaderButtons.Margin = new System.Windows.Forms.Padding(6);
+            this.panelHeaderButtons.Location = new System.Drawing.Point(1015, 0);
             this.panelHeaderButtons.Name = "panelHeaderButtons";
-            this.panelHeaderButtons.Size = new System.Drawing.Size(268, 117);
+            this.panelHeaderButtons.Size = new System.Drawing.Size(134, 61);
             this.panelHeaderButtons.TabIndex = 6;
             // 
             // bMinimize
@@ -82,10 +86,9 @@
             this.bMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bMinimize.Image = ((System.Drawing.Image)(resources.GetObject("bMinimize.Image")));
             this.bMinimize.ImageActive = null;
-            this.bMinimize.Location = new System.Drawing.Point(6, 23);
-            this.bMinimize.Margin = new System.Windows.Forms.Padding(6);
+            this.bMinimize.Location = new System.Drawing.Point(3, 12);
             this.bMinimize.Name = "bMinimize";
-            this.bMinimize.Size = new System.Drawing.Size(70, 67);
+            this.bMinimize.Size = new System.Drawing.Size(35, 35);
             this.bMinimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bMinimize.TabIndex = 4;
             this.bMinimize.TabStop = false;
@@ -98,10 +101,9 @@
             this.bMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bMaximize.Image = ((System.Drawing.Image)(resources.GetObject("bMaximize.Image")));
             this.bMaximize.ImageActive = null;
-            this.bMaximize.Location = new System.Drawing.Point(88, 23);
-            this.bMaximize.Margin = new System.Windows.Forms.Padding(6);
+            this.bMaximize.Location = new System.Drawing.Point(44, 12);
             this.bMaximize.Name = "bMaximize";
-            this.bMaximize.Size = new System.Drawing.Size(70, 67);
+            this.bMaximize.Size = new System.Drawing.Size(35, 35);
             this.bMaximize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bMaximize.TabIndex = 5;
             this.bMaximize.TabStop = false;
@@ -115,10 +117,9 @@
             this.bClose.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bClose.ErrorImage")));
             this.bClose.Image = ((System.Drawing.Image)(resources.GetObject("bClose.Image")));
             this.bClose.ImageActive = null;
-            this.bClose.Location = new System.Drawing.Point(170, 23);
-            this.bClose.Margin = new System.Windows.Forms.Padding(6);
+            this.bClose.Location = new System.Drawing.Point(85, 12);
             this.bClose.Name = "bClose";
-            this.bClose.Size = new System.Drawing.Size(70, 67);
+            this.bClose.Size = new System.Drawing.Size(35, 35);
             this.bClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.bClose.TabIndex = 3;
             this.bClose.TabStop = false;
@@ -130,101 +131,240 @@
             this.lbMapMakingStudio.AutoSize = true;
             this.lbMapMakingStudio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMapMakingStudio.ForeColor = System.Drawing.Color.White;
-            this.lbMapMakingStudio.Location = new System.Drawing.Point(24, 42);
-            this.lbMapMakingStudio.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbMapMakingStudio.Location = new System.Drawing.Point(12, 22);
             this.lbMapMakingStudio.Name = "lbMapMakingStudio";
-            this.lbMapMakingStudio.Size = new System.Drawing.Size(483, 45);
+            this.lbMapMakingStudio.Size = new System.Drawing.Size(238, 21);
             this.lbMapMakingStudio.TabIndex = 1;
             this.lbMapMakingStudio.Text = "MapMakingStudio by Wolf066LP";
             // 
-            // panelTopSeprator
+            // panel1
             // 
-            this.panelTopSeprator.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTopSeprator.Location = new System.Drawing.Point(0, 117);
-            this.panelTopSeprator.Margin = new System.Windows.Forms.Padding(6);
-            this.panelTopSeprator.Name = "panelTopSeprator";
-            this.panelTopSeprator.Size = new System.Drawing.Size(2298, 25);
-            this.panelTopSeprator.TabIndex = 4;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panel1.Controls.Add(this.bSuchen);
+            this.panel1.Controls.Add(this.bEinstellungen);
+            this.panel1.Controls.Add(this.bSnippets);
+            this.panel1.Controls.Add(this.bBearbeiten);
+            this.panel1.Controls.Add(this.bDatei);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 61);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 547);
+            this.panel1.TabIndex = 8;
             // 
-            // panelMenuBar
+            // bSuchen
             // 
-            this.panelMenuBar.Controls.Add(this.bEInstellungen);
-            this.panelMenuBar.Controls.Add(this.bSnippets);
-            this.panelMenuBar.Controls.Add(this.bDatei);
-            this.panelMenuBar.Controls.Add(this.panelMenuBarPlaceHolderLeft);
-            this.panelMenuBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelMenuBar.Location = new System.Drawing.Point(0, 142);
-            this.panelMenuBar.Margin = new System.Windows.Forms.Padding(6);
-            this.panelMenuBar.Name = "panelMenuBar";
-            this.panelMenuBar.Size = new System.Drawing.Size(2298, 62);
-            this.panelMenuBar.TabIndex = 5;
+            this.bSuchen.Activecolor = System.Drawing.Color.LimeGreen;
+            this.bSuchen.BackColor = System.Drawing.Color.ForestGreen;
+            this.bSuchen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bSuchen.BorderRadius = 0;
+            this.bSuchen.ButtonText = "  Suchen";
+            this.bSuchen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bSuchen.DisabledColor = System.Drawing.Color.Gray;
+            this.bSuchen.Iconcolor = System.Drawing.Color.Transparent;
+            this.bSuchen.Iconimage = ((System.Drawing.Image)(resources.GetObject("bSuchen.Iconimage")));
+            this.bSuchen.Iconimage_right = null;
+            this.bSuchen.Iconimage_right_Selected = null;
+            this.bSuchen.Iconimage_Selected = null;
+            this.bSuchen.IconMarginLeft = 0;
+            this.bSuchen.IconMarginRight = 0;
+            this.bSuchen.IconRightVisible = true;
+            this.bSuchen.IconRightZoom = 0D;
+            this.bSuchen.IconVisible = true;
+            this.bSuchen.IconZoom = 50D;
+            this.bSuchen.IsTab = false;
+            this.bSuchen.Location = new System.Drawing.Point(0, 129);
+            this.bSuchen.Name = "bSuchen";
+            this.bSuchen.Normalcolor = System.Drawing.Color.ForestGreen;
+            this.bSuchen.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bSuchen.OnHoverTextColor = System.Drawing.Color.White;
+            this.bSuchen.selected = false;
+            this.bSuchen.Size = new System.Drawing.Size(200, 44);
+            this.bSuchen.TabIndex = 12;
+            this.bSuchen.Text = "  Suchen";
+            this.bSuchen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bSuchen.Textcolor = System.Drawing.Color.White;
+            this.bSuchen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // bEInstellungen
+            // bEinstellungen
             // 
-            this.bEInstellungen.BackColor = System.Drawing.Color.ForestGreen;
-            this.bEInstellungen.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bEInstellungen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bEInstellungen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bEInstellungen.ForeColor = System.Drawing.Color.White;
-            this.bEInstellungen.Location = new System.Drawing.Point(444, 0);
-            this.bEInstellungen.Margin = new System.Windows.Forms.Padding(6);
-            this.bEInstellungen.Name = "bEInstellungen";
-            this.bEInstellungen.Size = new System.Drawing.Size(212, 62);
-            this.bEInstellungen.TabIndex = 9;
-            this.bEInstellungen.Text = "Einstellungen";
-            this.bEInstellungen.UseVisualStyleBackColor = false;
+            this.bEinstellungen.Activecolor = System.Drawing.Color.LimeGreen;
+            this.bEinstellungen.BackColor = System.Drawing.Color.ForestGreen;
+            this.bEinstellungen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bEinstellungen.BorderRadius = 0;
+            this.bEinstellungen.ButtonText = "  Einstellungen";
+            this.bEinstellungen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bEinstellungen.DisabledColor = System.Drawing.Color.Gray;
+            this.bEinstellungen.Iconcolor = System.Drawing.Color.Transparent;
+            this.bEinstellungen.Iconimage = ((System.Drawing.Image)(resources.GetObject("bEinstellungen.Iconimage")));
+            this.bEinstellungen.Iconimage_right = null;
+            this.bEinstellungen.Iconimage_right_Selected = null;
+            this.bEinstellungen.Iconimage_Selected = null;
+            this.bEinstellungen.IconMarginLeft = 0;
+            this.bEinstellungen.IconMarginRight = 0;
+            this.bEinstellungen.IconRightVisible = true;
+            this.bEinstellungen.IconRightZoom = 0D;
+            this.bEinstellungen.IconVisible = true;
+            this.bEinstellungen.IconZoom = 50D;
+            this.bEinstellungen.IsTab = false;
+            this.bEinstellungen.Location = new System.Drawing.Point(0, 172);
+            this.bEinstellungen.Name = "bEinstellungen";
+            this.bEinstellungen.Normalcolor = System.Drawing.Color.ForestGreen;
+            this.bEinstellungen.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bEinstellungen.OnHoverTextColor = System.Drawing.Color.White;
+            this.bEinstellungen.selected = false;
+            this.bEinstellungen.Size = new System.Drawing.Size(200, 44);
+            this.bEinstellungen.TabIndex = 10;
+            this.bEinstellungen.Text = "  Einstellungen";
+            this.bEinstellungen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bEinstellungen.Textcolor = System.Drawing.Color.White;
+            this.bEinstellungen.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // bSnippets
             // 
+            this.bSnippets.Activecolor = System.Drawing.Color.LimeGreen;
             this.bSnippets.BackColor = System.Drawing.Color.ForestGreen;
-            this.bSnippets.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bSnippets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bSnippets.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bSnippets.ForeColor = System.Drawing.Color.White;
-            this.bSnippets.Location = new System.Drawing.Point(232, 0);
-            this.bSnippets.Margin = new System.Windows.Forms.Padding(6);
+            this.bSnippets.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bSnippets.BorderRadius = 0;
+            this.bSnippets.ButtonText = "  Snippets";
+            this.bSnippets.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bSnippets.DisabledColor = System.Drawing.Color.Gray;
+            this.bSnippets.Iconcolor = System.Drawing.Color.Transparent;
+            this.bSnippets.Iconimage = ((System.Drawing.Image)(resources.GetObject("bSnippets.Iconimage")));
+            this.bSnippets.Iconimage_right = null;
+            this.bSnippets.Iconimage_right_Selected = null;
+            this.bSnippets.Iconimage_Selected = null;
+            this.bSnippets.IconMarginLeft = 0;
+            this.bSnippets.IconMarginRight = 0;
+            this.bSnippets.IconRightVisible = true;
+            this.bSnippets.IconRightZoom = 0D;
+            this.bSnippets.IconVisible = true;
+            this.bSnippets.IconZoom = 50D;
+            this.bSnippets.IsTab = false;
+            this.bSnippets.Location = new System.Drawing.Point(0, 86);
             this.bSnippets.Name = "bSnippets";
-            this.bSnippets.Size = new System.Drawing.Size(212, 62);
-            this.bSnippets.TabIndex = 8;
-            this.bSnippets.Text = "Snippets";
-            this.bSnippets.UseVisualStyleBackColor = false;
+            this.bSnippets.Normalcolor = System.Drawing.Color.ForestGreen;
+            this.bSnippets.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bSnippets.OnHoverTextColor = System.Drawing.Color.White;
+            this.bSnippets.selected = false;
+            this.bSnippets.Size = new System.Drawing.Size(200, 44);
+            this.bSnippets.TabIndex = 9;
+            this.bSnippets.Text = "  Snippets";
+            this.bSnippets.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bSnippets.Textcolor = System.Drawing.Color.White;
+            this.bSnippets.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // bBearbeiten
+            // 
+            this.bBearbeiten.Activecolor = System.Drawing.Color.LimeGreen;
+            this.bBearbeiten.BackColor = System.Drawing.Color.ForestGreen;
+            this.bBearbeiten.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bBearbeiten.BorderRadius = 0;
+            this.bBearbeiten.ButtonText = "  Bearbeiten";
+            this.bBearbeiten.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bBearbeiten.DisabledColor = System.Drawing.Color.Gray;
+            this.bBearbeiten.Iconcolor = System.Drawing.Color.Transparent;
+            this.bBearbeiten.Iconimage = ((System.Drawing.Image)(resources.GetObject("bBearbeiten.Iconimage")));
+            this.bBearbeiten.Iconimage_right = null;
+            this.bBearbeiten.Iconimage_right_Selected = null;
+            this.bBearbeiten.Iconimage_Selected = null;
+            this.bBearbeiten.IconMarginLeft = 0;
+            this.bBearbeiten.IconMarginRight = 0;
+            this.bBearbeiten.IconRightVisible = true;
+            this.bBearbeiten.IconRightZoom = 0D;
+            this.bBearbeiten.IconVisible = true;
+            this.bBearbeiten.IconZoom = 50D;
+            this.bBearbeiten.IsTab = false;
+            this.bBearbeiten.Location = new System.Drawing.Point(0, 43);
+            this.bBearbeiten.Name = "bBearbeiten";
+            this.bBearbeiten.Normalcolor = System.Drawing.Color.ForestGreen;
+            this.bBearbeiten.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bBearbeiten.OnHoverTextColor = System.Drawing.Color.White;
+            this.bBearbeiten.selected = false;
+            this.bBearbeiten.Size = new System.Drawing.Size(200, 44);
+            this.bBearbeiten.TabIndex = 8;
+            this.bBearbeiten.Text = "  Bearbeiten";
+            this.bBearbeiten.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bBearbeiten.Textcolor = System.Drawing.Color.White;
+            this.bBearbeiten.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // bDatei
             // 
+            this.bDatei.Activecolor = System.Drawing.Color.LimeGreen;
             this.bDatei.BackColor = System.Drawing.Color.ForestGreen;
-            this.bDatei.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bDatei.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bDatei.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bDatei.ForeColor = System.Drawing.Color.White;
-            this.bDatei.Location = new System.Drawing.Point(20, 0);
-            this.bDatei.Margin = new System.Windows.Forms.Padding(6);
+            this.bDatei.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bDatei.BorderRadius = 0;
+            this.bDatei.ButtonText = "  Datei";
+            this.bDatei.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bDatei.DisabledColor = System.Drawing.Color.Gray;
+            this.bDatei.Iconcolor = System.Drawing.Color.Transparent;
+            this.bDatei.Iconimage = ((System.Drawing.Image)(resources.GetObject("bDatei.Iconimage")));
+            this.bDatei.Iconimage_right = null;
+            this.bDatei.Iconimage_right_Selected = null;
+            this.bDatei.Iconimage_Selected = null;
+            this.bDatei.IconMarginLeft = 0;
+            this.bDatei.IconMarginRight = 0;
+            this.bDatei.IconRightVisible = true;
+            this.bDatei.IconRightZoom = 0D;
+            this.bDatei.IconVisible = true;
+            this.bDatei.IconZoom = 50D;
+            this.bDatei.IsTab = false;
+            this.bDatei.Location = new System.Drawing.Point(0, 0);
             this.bDatei.Name = "bDatei";
-            this.bDatei.Size = new System.Drawing.Size(212, 62);
+            this.bDatei.Normalcolor = System.Drawing.Color.ForestGreen;
+            this.bDatei.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bDatei.OnHoverTextColor = System.Drawing.Color.White;
+            this.bDatei.selected = false;
+            this.bDatei.Size = new System.Drawing.Size(200, 44);
             this.bDatei.TabIndex = 7;
-            this.bDatei.Text = "Datei";
-            this.bDatei.UseVisualStyleBackColor = false;
+            this.bDatei.Text = "  Datei";
+            this.bDatei.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bDatei.Textcolor = System.Drawing.Color.White;
+            this.bDatei.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // panelMenuBarPlaceHolderLeft
+            // panelMenuBar
             // 
-            this.panelMenuBarPlaceHolderLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenuBarPlaceHolderLeft.Location = new System.Drawing.Point(0, 0);
-            this.panelMenuBarPlaceHolderLeft.Margin = new System.Windows.Forms.Padding(6);
-            this.panelMenuBarPlaceHolderLeft.Name = "panelMenuBarPlaceHolderLeft";
-            this.panelMenuBarPlaceHolderLeft.Size = new System.Drawing.Size(20, 62);
-            this.panelMenuBarPlaceHolderLeft.TabIndex = 6;
+            this.panelMenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panelMenuBar.Controls.Add(this.bTab1);
+            this.panelMenuBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelMenuBar.Location = new System.Drawing.Point(200, 61);
+            this.panelMenuBar.Name = "panelMenuBar";
+            this.panelMenuBar.Size = new System.Drawing.Size(949, 32);
+            this.panelMenuBar.TabIndex = 9;
+            // 
+            // bTab1
+            // 
+            this.bTab1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.bTab1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.bTab1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bTab1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTab1.ForeColor = System.Drawing.Color.White;
+            this.bTab1.Location = new System.Drawing.Point(0, 0);
+            this.bTab1.Name = "bTab1";
+            this.bTab1.Size = new System.Drawing.Size(119, 32);
+            this.bTab1.TabIndex = 7;
+            this.bTab1.Text = "Tab";
+            this.bTab1.UseVisualStyleBackColor = false;
+            // 
+            // panelTabs
+            // 
+            this.panelTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTabs.Location = new System.Drawing.Point(200, 93);
+            this.panelTabs.Name = "panelTabs";
+            this.panelTabs.Size = new System.Drawing.Size(949, 515);
+            this.panelTabs.TabIndex = 10;
             // 
             // MapMakingStudio
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(2298, 1175);
+            this.ClientSize = new System.Drawing.Size(1149, 608);
+            this.Controls.Add(this.panelTabs);
             this.Controls.Add(this.panelMenuBar);
-            this.Controls.Add(this.panelTopSeprator);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.HeaderBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(6);
-            this.MinimumSize = new System.Drawing.Size(600, 577);
+            this.MinimumSize = new System.Drawing.Size(300, 300);
             this.Name = "MapMakingStudio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MapMakingStudio";
@@ -234,6 +374,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bMinimize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bMaximize)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bClose)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.panelMenuBar.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -247,12 +388,15 @@
         private Bunifu.Framework.UI.BunifuImageButton bMaximize;
         private Bunifu.Framework.UI.BunifuImageButton bMinimize;
         private System.Windows.Forms.Panel panelHeaderButtons;
-        private System.Windows.Forms.Panel panelTopSeprator;
+        private System.Windows.Forms.Panel panel1;
+        private BunifuFlatButton bDatei;
         private System.Windows.Forms.Panel panelMenuBar;
-        private System.Windows.Forms.Button bDatei;
-        private System.Windows.Forms.Panel panelMenuBarPlaceHolderLeft;
-        private System.Windows.Forms.Button bEInstellungen;
-        private System.Windows.Forms.Button bSnippets;
+        private System.Windows.Forms.Button bTab1;
+        private System.Windows.Forms.Panel panelTabs;
+        private BunifuFlatButton bEinstellungen;
+        private BunifuFlatButton bSnippets;
+        private BunifuFlatButton bBearbeiten;
+        private BunifuFlatButton bSuchen;
     }
 }
 

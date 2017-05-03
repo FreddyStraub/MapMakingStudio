@@ -83,5 +83,10 @@ namespace MapMakingStudio
         {
             maximizeWindow(this);
         }
+
+        private void bBeenden_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
