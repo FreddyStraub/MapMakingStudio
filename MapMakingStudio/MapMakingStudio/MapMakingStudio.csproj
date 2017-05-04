@@ -58,18 +58,19 @@
     <Compile Include="MapMakingStudio.Designer.cs">
       <DependentUpon>MapMakingStudio.cs</DependentUpon>
     </Compile>
-    <Compile Include="MenuBarSubMenus\DateiSubMenu.cs">
+    <Compile Include="MenuBar\DateiSubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MenuBarSubMenus\DateiSubMenu.Designer.cs">
+    <Compile Include="MenuBar\DateiSubMenu.Designer.cs">
       <DependentUpon>DateiSubMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuBar\MenuBar.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MapMakingStudio.resx">
       <DependentUpon>MapMakingStudio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MenuBarSubMenus\DateiSubMenu.resx">
+    <EmbeddedResource Include="MenuBar\DateiSubMenu.resx">
       <DependentUpon>DateiSubMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

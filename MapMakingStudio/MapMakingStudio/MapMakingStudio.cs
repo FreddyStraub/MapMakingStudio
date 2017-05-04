@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MapMakingStudio.MenuBar;
 
 namespace MapMakingStudio
 {
@@ -20,7 +21,14 @@ namespace MapMakingStudio
             this.SetStyle(ControlStyles.ResizeRedraw, true); // this is to avoid visual artifacts
 
             generatePanelTabsSize();
+
+            MenuBar = new MenuBar.MenuBar(this);
         }
+
+        public enum Menus { Datei, Bearbeiten, Snippets, Suche, Einstellungen };
+        public enum MenuStatus { Open, Close };
+
+        public MenuBar.MenuBar MenuBar;
 
         #region Move Form
 
@@ -118,7 +126,7 @@ namespace MapMakingStudio
 
         private void bDatei_Click(object sender, EventArgs e)
         {
-            MenuBar(Menus.Datei, MenuStatus.Open);
+            MenuBar.toggle(Menus.Datei, MenuStatus.Open);
         }
 
 
@@ -151,7 +159,6 @@ namespace MapMakingStudio
 
         private void bBearbeiten_Click(object sender, EventArgs e)
         {
-            MenuBar(Menus.Bearbeiten, MenuStatus.Open);
         }
 
         private void panel1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -167,163 +174,13 @@ namespace MapMakingStudio
 
         }
 
-        #region Sub Menus
 
-        private enum Menus { Datei, Bearbeiten, Snippets, Suche, Einstellungen};
-        private enum MenuStatus { Open, Close };
-
-        #region MenuSelected Bools
-
-        /// <summary>
-        /// Gibt an ob dateiMenu geöffnet ist.
-        /// </summary>
-        private bool dateiMenuSelected = false;
-
-        /// <summary>
-        /// Gibt an ob bearbeitenMenu geöffnet ist.
-        /// </summary>
-
-        private bool bearbeitenMenuSelected = false;
-
-        /// <summary>
-        /// Gibt an ob SnippetsMenu geöffnet ist.
-        /// </summary>
-
-        private bool snippetsMenuSelected = false;
-
-        #endregion
-
-
-        private void MenuBar(Menus menu, MenuStatus menustatus)
-        {
-
-            closeAllMenus();
-
-            switch (menu)
-            {
-                case Menus.Datei: DateiMenu() ; break;
-                case Menus.Bearbeiten: openBearbeitenMenu(); break;
-                case Menus.Snippets: openSnippetsMenu(); break;
-                case Menus.Suche: openSucheMenu(); break;
-                case Menus.Einstellungen: openEinstellungenMenu(); break;
-            }
-
-
-
-            #region Methoden für einzelne Menus
-
-
-
-
-            /// <summary>
-            /// Öffnet das DateiMenu
-            /// </summary>
-            void DateiMenu()
-            {
-
-                MenuBarSubMenus.DateiSubMenu submenu = new MenuBarSubMenus.DateiSubMenu();
-
-                #region Creating Menu Form
-
-                submenu.TopLevel = false;
-                submenu.AutoScroll = true;
-
-                panelDatei.Controls.Add(submenu);
-
-                submenu.Location = new Point(panelDatei.Location.X, panelDatei.Location.Y + bDatei.Height);
-
-                submenu.Show();
-
-                #endregion
-                
-                if(menustatus == MenuStatus.Open) { 
-                    panelDatei.Size = new Size(panelDatei.Width, submenu.Height);
-                    dateiMenuSelected = true;
-
-                }else
-
-                {
-                    panelDatei.Size = new Size(panelDatei.Width, bDatei.Height - 1);
-                    dateiMenuSelected = false;
-
-
-                }
-
-
-
-            }
-
-
-            /// <summary>
-            /// Öffnet das BearbeitenMenu
-            /// </summary>
-            void openBearbeitenMenu()
-            {
-
-                MenuBarSubMenus.DateiSubMenu submenu = new MenuBarSubMenus.DateiSubMenu();
-
-                #region Creating Menu Form
-
-                submenu.TopLevel = false;
-                submenu.AutoScroll = true;
-
-                panelBearbeiten.Controls.Add(submenu);
-
-                submenu.Location = new Point(panelBearbeiten.Location.X, panelBearbeiten.Location.Y + bBearbeiten.Height);
-
-                submenu.Show();
-
-                #endregion
-
-                if (dateiMenuSelected)
-                {
-                    panelBearbeiten.Size = new Size(panelBearbeiten.Width, bBearbeiten.Height - 1);
-                    bearbeitenMenuSelected = false;
-                }
-                else
-                {
-                    panelBearbeiten.Size = new Size(panelBearbeiten.Width, submenu.Height);
-                    bearbeitenMenuSelected = true;
-
-                }
-
-            }
-
-            /// <summary>
-            /// Öffnet das SnippetsMenu
-            /// </summary>
-            void openSnippetsMenu()
-            {
-                throw new NotImplementedException();
-            }
-
-            /// <summary>
-            /// Öffnet das SucheMenu
-            /// </summary>
-            void openSucheMenu()
-            {
-                throw new NotImplementedException();
-            }
-
-            /// <summary>
-            /// Öffnet die Einstellungen
-            /// </summary>
-            void openEinstellungenMenu()
-            {
-                throw new NotImplementedException();
-            }
-
-            #endregion
-
-        }
 
         private void closeAllMenus()
         {
-            MenuBar(Menus.Datei, MenuStatus.Close);
         }
 
 
-        #endregion
 
     }
 }
