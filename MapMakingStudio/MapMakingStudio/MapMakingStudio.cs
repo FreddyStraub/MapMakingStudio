@@ -126,7 +126,30 @@ namespace MapMakingStudio
 
         private void bDatei_Click(object sender, EventArgs e)
         {
-            MenuBar.toggle(Menus.Datei, MenuStatus.Open);
+            if (MenuBar.dateiMenuIsOpen)
+            {
+                MenuBar.toggle(Menus.Datei, MenuStatus.Close);
+            }
+            else
+            {
+                MenuBar.toggle(Menus.Datei, MenuStatus.Open);
+
+            }
+        }
+
+        private void bBearbeiten_Click(object sender, EventArgs e)
+        {
+
+            if (MenuBar.bearbeitenMenuIsOpen)
+            {
+                MenuBar.toggle(Menus.Bearbeiten, MenuStatus.Close);
+            }
+            else
+            {
+                MenuBar.toggle(Menus.Bearbeiten, MenuStatus.Open);
+
+            }
+
         }
 
 
@@ -142,7 +165,6 @@ namespace MapMakingStudio
             panelTabs.Size = new Size(width, height);
         }
 
-
         private void bClose_Click(object sender, EventArgs e)
         {
             Close();
@@ -157,10 +179,6 @@ namespace MapMakingStudio
 
         }
 
-        private void bBearbeiten_Click(object sender, EventArgs e)
-        {
-        }
-
         private void panel1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             maximizeWindow(this);
@@ -173,14 +191,6 @@ namespace MapMakingStudio
                 bMaximize.Image = Properties.Resources.maximizeIcon;
 
         }
-
-
-
-        private void closeAllMenus()
-        {
-        }
-
-
 
     }
 }

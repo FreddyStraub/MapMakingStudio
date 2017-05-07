@@ -58,6 +58,12 @@
     <Compile Include="MapMakingStudio.Designer.cs">
       <DependentUpon>MapMakingStudio.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuBar\BearbeitenSubMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuBar\BearbeitenSubMenu.Designer.cs">
+      <DependentUpon>BearbeitenSubMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="MenuBar\DateiSubMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +75,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="MapMakingStudio.resx">
       <DependentUpon>MapMakingStudio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuBar\BearbeitenSubMenu.resx">
+      <DependentUpon>BearbeitenSubMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuBar\DateiSubMenu.resx">
       <DependentUpon>DateiSubMenu.cs</DependentUpon>

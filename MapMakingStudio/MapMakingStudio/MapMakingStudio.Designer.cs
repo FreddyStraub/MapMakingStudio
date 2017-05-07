@@ -1,4 +1,5 @@
 ﻿using Bunifu.Framework.UI;
+using BunifuAnimatorNS;
 
 namespace MapMakingStudio
 {
@@ -30,6 +31,8 @@ namespace MapMakingStudio
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapMakingStudio));
             this.HeaderBar = new System.Windows.Forms.Panel();
             this.panelHeaderButtons = new System.Windows.Forms.Panel();
@@ -51,6 +54,7 @@ namespace MapMakingStudio
             this.panelTabBar = new System.Windows.Forms.Panel();
             this.bTab1 = new System.Windows.Forms.Button();
             this.panelTabs = new System.Windows.Forms.Panel();
+            this.MenuBarAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
             this.HeaderBar.SuspendLayout();
             this.panelHeaderButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bMinimize)).BeginInit();
@@ -70,6 +74,7 @@ namespace MapMakingStudio
             this.HeaderBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.HeaderBar.Controls.Add(this.panelHeaderButtons);
             this.HeaderBar.Controls.Add(this.lbMapMakingStudio);
+            this.MenuBarAnimator.SetDecoration(this.HeaderBar, BunifuAnimatorNS.DecorationType.None);
             this.HeaderBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.HeaderBar.Location = new System.Drawing.Point(0, 0);
             this.HeaderBar.Name = "HeaderBar";
@@ -84,6 +89,7 @@ namespace MapMakingStudio
             this.panelHeaderButtons.Controls.Add(this.bMinimize);
             this.panelHeaderButtons.Controls.Add(this.bMaximize);
             this.panelHeaderButtons.Controls.Add(this.bClose);
+            this.MenuBarAnimator.SetDecoration(this.panelHeaderButtons, BunifuAnimatorNS.DecorationType.None);
             this.panelHeaderButtons.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelHeaderButtons.Location = new System.Drawing.Point(988, 0);
             this.panelHeaderButtons.Name = "panelHeaderButtons";
@@ -94,6 +100,7 @@ namespace MapMakingStudio
             // 
             this.bMinimize.BackColor = System.Drawing.Color.ForestGreen;
             this.bMinimize.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuBarAnimator.SetDecoration(this.bMinimize, BunifuAnimatorNS.DecorationType.None);
             this.bMinimize.Image = ((System.Drawing.Image)(resources.GetObject("bMinimize.Image")));
             this.bMinimize.ImageActive = null;
             this.bMinimize.Location = new System.Drawing.Point(3, 12);
@@ -109,7 +116,8 @@ namespace MapMakingStudio
             // 
             this.bMaximize.BackColor = System.Drawing.Color.ForestGreen;
             this.bMaximize.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bMaximize.Image = ((System.Drawing.Image)(resources.GetObject("bMaximize.Image")));
+            this.MenuBarAnimator.SetDecoration(this.bMaximize, BunifuAnimatorNS.DecorationType.None);
+            this.bMaximize.Image = global::MapMakingStudio.Properties.Resources.maximizeIcon;
             this.bMaximize.ImageActive = null;
             this.bMaximize.Location = new System.Drawing.Point(44, 12);
             this.bMaximize.Name = "bMaximize";
@@ -124,6 +132,7 @@ namespace MapMakingStudio
             // 
             this.bClose.BackColor = System.Drawing.Color.ForestGreen;
             this.bClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuBarAnimator.SetDecoration(this.bClose, BunifuAnimatorNS.DecorationType.None);
             this.bClose.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bClose.ErrorImage")));
             this.bClose.Image = ((System.Drawing.Image)(resources.GetObject("bClose.Image")));
             this.bClose.ImageActive = null;
@@ -139,6 +148,7 @@ namespace MapMakingStudio
             // lbMapMakingStudio
             // 
             this.lbMapMakingStudio.AutoSize = true;
+            this.MenuBarAnimator.SetDecoration(this.lbMapMakingStudio, BunifuAnimatorNS.DecorationType.None);
             this.lbMapMakingStudio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMapMakingStudio.ForeColor = System.Drawing.Color.White;
             this.lbMapMakingStudio.Location = new System.Drawing.Point(12, 22);
@@ -155,6 +165,7 @@ namespace MapMakingStudio
             this.panelMenuBar.Controls.Add(this.panelSnippets);
             this.panelMenuBar.Controls.Add(this.panelBearbeiten);
             this.panelMenuBar.Controls.Add(this.panelDatei);
+            this.MenuBarAnimator.SetDecoration(this.panelMenuBar, BunifuAnimatorNS.DecorationType.None);
             this.panelMenuBar.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenuBar.Location = new System.Drawing.Point(0, 61);
             this.panelMenuBar.Name = "panelMenuBar";
@@ -164,6 +175,7 @@ namespace MapMakingStudio
             // panelEinstellungen
             // 
             this.panelEinstellungen.Controls.Add(this.bEinstellungen);
+            this.MenuBarAnimator.SetDecoration(this.panelEinstellungen, BunifuAnimatorNS.DecorationType.None);
             this.panelEinstellungen.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelEinstellungen.Location = new System.Drawing.Point(0, 172);
             this.panelEinstellungen.Name = "panelEinstellungen";
@@ -178,6 +190,7 @@ namespace MapMakingStudio
             this.bEinstellungen.BorderRadius = 0;
             this.bEinstellungen.ButtonText = "  Einstellungen";
             this.bEinstellungen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuBarAnimator.SetDecoration(this.bEinstellungen, BunifuAnimatorNS.DecorationType.None);
             this.bEinstellungen.DisabledColor = System.Drawing.Color.Gray;
             this.bEinstellungen.Iconcolor = System.Drawing.Color.Transparent;
             this.bEinstellungen.Iconimage = ((System.Drawing.Image)(resources.GetObject("bEinstellungen.Iconimage")));
@@ -207,6 +220,7 @@ namespace MapMakingStudio
             // panelSuche
             // 
             this.panelSuche.Controls.Add(this.bSuchen);
+            this.MenuBarAnimator.SetDecoration(this.panelSuche, BunifuAnimatorNS.DecorationType.None);
             this.panelSuche.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSuche.Location = new System.Drawing.Point(0, 129);
             this.panelSuche.Name = "panelSuche";
@@ -221,6 +235,7 @@ namespace MapMakingStudio
             this.bSuchen.BorderRadius = 0;
             this.bSuchen.ButtonText = "  Suchen";
             this.bSuchen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuBarAnimator.SetDecoration(this.bSuchen, BunifuAnimatorNS.DecorationType.None);
             this.bSuchen.DisabledColor = System.Drawing.Color.Gray;
             this.bSuchen.Iconcolor = System.Drawing.Color.Transparent;
             this.bSuchen.Iconimage = ((System.Drawing.Image)(resources.GetObject("bSuchen.Iconimage")));
@@ -250,6 +265,7 @@ namespace MapMakingStudio
             // panelSnippets
             // 
             this.panelSnippets.Controls.Add(this.bSnippets);
+            this.MenuBarAnimator.SetDecoration(this.panelSnippets, BunifuAnimatorNS.DecorationType.None);
             this.panelSnippets.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSnippets.Location = new System.Drawing.Point(0, 86);
             this.panelSnippets.Name = "panelSnippets";
@@ -264,6 +280,7 @@ namespace MapMakingStudio
             this.bSnippets.BorderRadius = 0;
             this.bSnippets.ButtonText = "  Snippets";
             this.bSnippets.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuBarAnimator.SetDecoration(this.bSnippets, BunifuAnimatorNS.DecorationType.None);
             this.bSnippets.DisabledColor = System.Drawing.Color.Gray;
             this.bSnippets.Iconcolor = System.Drawing.Color.Transparent;
             this.bSnippets.Iconimage = ((System.Drawing.Image)(resources.GetObject("bSnippets.Iconimage")));
@@ -293,6 +310,7 @@ namespace MapMakingStudio
             // panelBearbeiten
             // 
             this.panelBearbeiten.Controls.Add(this.bBearbeiten);
+            this.MenuBarAnimator.SetDecoration(this.panelBearbeiten, BunifuAnimatorNS.DecorationType.None);
             this.panelBearbeiten.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBearbeiten.Location = new System.Drawing.Point(0, 43);
             this.panelBearbeiten.Name = "panelBearbeiten";
@@ -307,6 +325,7 @@ namespace MapMakingStudio
             this.bBearbeiten.BorderRadius = 0;
             this.bBearbeiten.ButtonText = "  Bearbeiten";
             this.bBearbeiten.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuBarAnimator.SetDecoration(this.bBearbeiten, BunifuAnimatorNS.DecorationType.None);
             this.bBearbeiten.DisabledColor = System.Drawing.Color.Gray;
             this.bBearbeiten.Iconcolor = System.Drawing.Color.Transparent;
             this.bBearbeiten.Iconimage = ((System.Drawing.Image)(resources.GetObject("bBearbeiten.Iconimage")));
@@ -337,6 +356,7 @@ namespace MapMakingStudio
             // panelDatei
             // 
             this.panelDatei.Controls.Add(this.bDatei);
+            this.MenuBarAnimator.SetDecoration(this.panelDatei, BunifuAnimatorNS.DecorationType.None);
             this.panelDatei.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelDatei.Location = new System.Drawing.Point(0, 0);
             this.panelDatei.Name = "panelDatei";
@@ -351,6 +371,7 @@ namespace MapMakingStudio
             this.bDatei.BorderRadius = 0;
             this.bDatei.ButtonText = "  Datei";
             this.bDatei.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuBarAnimator.SetDecoration(this.bDatei, BunifuAnimatorNS.DecorationType.None);
             this.bDatei.DisabledColor = System.Drawing.Color.Gray;
             this.bDatei.Iconcolor = System.Drawing.Color.Transparent;
             this.bDatei.Iconimage = ((System.Drawing.Image)(resources.GetObject("bDatei.Iconimage")));
@@ -382,6 +403,7 @@ namespace MapMakingStudio
             // 
             this.panelTabBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.panelTabBar.Controls.Add(this.bTab1);
+            this.MenuBarAnimator.SetDecoration(this.panelTabBar, BunifuAnimatorNS.DecorationType.None);
             this.panelTabBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTabBar.Location = new System.Drawing.Point(200, 61);
             this.panelTabBar.Name = "panelTabBar";
@@ -391,6 +413,7 @@ namespace MapMakingStudio
             // bTab1
             // 
             this.bTab1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.MenuBarAnimator.SetDecoration(this.bTab1, BunifuAnimatorNS.DecorationType.None);
             this.bTab1.Dock = System.Windows.Forms.DockStyle.Left;
             this.bTab1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bTab1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -405,10 +428,34 @@ namespace MapMakingStudio
             // panelTabs
             // 
             this.panelTabs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.MenuBarAnimator.SetDecoration(this.panelTabs, BunifuAnimatorNS.DecorationType.None);
             this.panelTabs.Location = new System.Drawing.Point(200, 93);
             this.panelTabs.Name = "panelTabs";
             this.panelTabs.Size = new System.Drawing.Size(919, 541);
             this.panelTabs.TabIndex = 10;
+            // 
+            // MenuBarAnimator
+            // 
+            this.MenuBarAnimator.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndHorizSlide;
+            this.MenuBarAnimator.Cursor = null;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.MenuBarAnimator.DefaultAnimation = animation2;
+            this.MenuBarAnimator.Interval = 1000;
+            this.MenuBarAnimator.TimeStep = 0.1F;
             // 
             // MapMakingStudio
             // 
@@ -420,6 +467,7 @@ namespace MapMakingStudio
             this.Controls.Add(this.panelTabBar);
             this.Controls.Add(this.panelMenuBar);
             this.Controls.Add(this.HeaderBar);
+            this.MenuBarAnimator.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(667, 334);
             this.Name = "MapMakingStudio";
@@ -465,6 +513,7 @@ namespace MapMakingStudio
         public BunifuFlatButton bBearbeiten;
         public System.Windows.Forms.Panel panelDatei;
         public BunifuFlatButton bDatei;
+        public BunifuTransition MenuBarAnimator;
     }
 }
 
