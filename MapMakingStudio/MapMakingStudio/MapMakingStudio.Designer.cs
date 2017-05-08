@@ -36,30 +36,27 @@ namespace MapMakingStudio
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapMakingStudio));
             this.HeaderBar = new System.Windows.Forms.Panel();
             this.panelHeaderButtons = new System.Windows.Forms.Panel();
-            this.bMinimize = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bMaximize = new Bunifu.Framework.UI.BunifuImageButton();
-            this.bClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.lbMapMakingStudio = new System.Windows.Forms.Label();
             this.panelMenuBar = new System.Windows.Forms.Panel();
             this.panelEinstellungen = new System.Windows.Forms.Panel();
-            this.bEinstellungen = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelSuche = new System.Windows.Forms.Panel();
-            this.bSuchen = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelSnippets = new System.Windows.Forms.Panel();
-            this.bSnippets = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelBearbeiten = new System.Windows.Forms.Panel();
-            this.bBearbeiten = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelDatei = new System.Windows.Forms.Panel();
-            this.bDatei = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelTabBar = new System.Windows.Forms.Panel();
             this.bTab1 = new System.Windows.Forms.Button();
             this.panelTabs = new System.Windows.Forms.Panel();
             this.MenuBarAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.bEinstellungen = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bSuchen = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bSnippets = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bBearbeiten = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bDatei = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.bMinimize = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bMaximize = new Bunifu.Framework.UI.BunifuImageButton();
+            this.bClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.HeaderBar.SuspendLayout();
             this.panelHeaderButtons.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bMinimize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bMaximize)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bClose)).BeginInit();
             this.panelMenuBar.SuspendLayout();
             this.panelEinstellungen.SuspendLayout();
             this.panelSuche.SuspendLayout();
@@ -67,6 +64,9 @@ namespace MapMakingStudio
             this.panelBearbeiten.SuspendLayout();
             this.panelDatei.SuspendLayout();
             this.panelTabBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bMinimize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bMaximize)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bClose)).BeginInit();
             this.SuspendLayout();
             // 
             // HeaderBar
@@ -95,6 +95,319 @@ namespace MapMakingStudio
             this.panelHeaderButtons.Name = "panelHeaderButtons";
             this.panelHeaderButtons.Size = new System.Drawing.Size(134, 61);
             this.panelHeaderButtons.TabIndex = 6;
+            // 
+            // lbMapMakingStudio
+            // 
+            this.lbMapMakingStudio.AutoSize = true;
+            this.MenuBarAnimator.SetDecoration(this.lbMapMakingStudio, BunifuAnimatorNS.DecorationType.None);
+            this.lbMapMakingStudio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMapMakingStudio.ForeColor = System.Drawing.Color.White;
+            this.lbMapMakingStudio.Location = new System.Drawing.Point(12, 22);
+            this.lbMapMakingStudio.Name = "lbMapMakingStudio";
+            this.lbMapMakingStudio.Size = new System.Drawing.Size(238, 21);
+            this.lbMapMakingStudio.TabIndex = 1;
+            this.lbMapMakingStudio.Text = "MapMakingStudio by Wolf066LP";
+            // 
+            // panelMenuBar
+            // 
+            this.panelMenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panelMenuBar.Controls.Add(this.panelEinstellungen);
+            this.panelMenuBar.Controls.Add(this.panelSuche);
+            this.panelMenuBar.Controls.Add(this.panelSnippets);
+            this.panelMenuBar.Controls.Add(this.panelBearbeiten);
+            this.panelMenuBar.Controls.Add(this.panelDatei);
+            this.MenuBarAnimator.SetDecoration(this.panelMenuBar, BunifuAnimatorNS.DecorationType.None);
+            this.panelMenuBar.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelMenuBar.Location = new System.Drawing.Point(0, 61);
+            this.panelMenuBar.Name = "panelMenuBar";
+            this.panelMenuBar.Size = new System.Drawing.Size(200, 576);
+            this.panelMenuBar.TabIndex = 8;
+            // 
+            // panelEinstellungen
+            // 
+            this.panelEinstellungen.Controls.Add(this.bEinstellungen);
+            this.MenuBarAnimator.SetDecoration(this.panelEinstellungen, BunifuAnimatorNS.DecorationType.None);
+            this.panelEinstellungen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelEinstellungen.Location = new System.Drawing.Point(0, 172);
+            this.panelEinstellungen.Name = "panelEinstellungen";
+            this.panelEinstellungen.Size = new System.Drawing.Size(200, 43);
+            this.panelEinstellungen.TabIndex = 17;
+            // 
+            // panelSuche
+            // 
+            this.panelSuche.Controls.Add(this.bSuchen);
+            this.MenuBarAnimator.SetDecoration(this.panelSuche, BunifuAnimatorNS.DecorationType.None);
+            this.panelSuche.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSuche.Location = new System.Drawing.Point(0, 129);
+            this.panelSuche.Name = "panelSuche";
+            this.panelSuche.Size = new System.Drawing.Size(200, 43);
+            this.panelSuche.TabIndex = 18;
+            // 
+            // panelSnippets
+            // 
+            this.panelSnippets.Controls.Add(this.bSnippets);
+            this.MenuBarAnimator.SetDecoration(this.panelSnippets, BunifuAnimatorNS.DecorationType.None);
+            this.panelSnippets.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSnippets.Location = new System.Drawing.Point(0, 86);
+            this.panelSnippets.Name = "panelSnippets";
+            this.panelSnippets.Size = new System.Drawing.Size(200, 43);
+            this.panelSnippets.TabIndex = 18;
+            // 
+            // panelBearbeiten
+            // 
+            this.panelBearbeiten.Controls.Add(this.bBearbeiten);
+            this.MenuBarAnimator.SetDecoration(this.panelBearbeiten, BunifuAnimatorNS.DecorationType.None);
+            this.panelBearbeiten.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelBearbeiten.Location = new System.Drawing.Point(0, 43);
+            this.panelBearbeiten.Name = "panelBearbeiten";
+            this.panelBearbeiten.Size = new System.Drawing.Size(200, 43);
+            this.panelBearbeiten.TabIndex = 18;
+            // 
+            // panelDatei
+            // 
+            this.panelDatei.Controls.Add(this.bDatei);
+            this.MenuBarAnimator.SetDecoration(this.panelDatei, BunifuAnimatorNS.DecorationType.None);
+            this.panelDatei.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelDatei.Location = new System.Drawing.Point(0, 0);
+            this.panelDatei.Name = "panelDatei";
+            this.panelDatei.Size = new System.Drawing.Size(200, 43);
+            this.panelDatei.TabIndex = 18;
+            // 
+            // panelTabBar
+            // 
+            this.panelTabBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panelTabBar.Controls.Add(this.bTab1);
+            this.MenuBarAnimator.SetDecoration(this.panelTabBar, BunifuAnimatorNS.DecorationType.None);
+            this.panelTabBar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTabBar.Location = new System.Drawing.Point(200, 61);
+            this.panelTabBar.Name = "panelTabBar";
+            this.panelTabBar.Size = new System.Drawing.Size(922, 32);
+            this.panelTabBar.TabIndex = 9;
+            // 
+            // bTab1
+            // 
+            this.bTab1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.MenuBarAnimator.SetDecoration(this.bTab1, BunifuAnimatorNS.DecorationType.None);
+            this.bTab1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.bTab1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bTab1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bTab1.ForeColor = System.Drawing.Color.White;
+            this.bTab1.Location = new System.Drawing.Point(0, 0);
+            this.bTab1.Name = "bTab1";
+            this.bTab1.Size = new System.Drawing.Size(119, 32);
+            this.bTab1.TabIndex = 7;
+            this.bTab1.Text = "Tab";
+            this.bTab1.UseVisualStyleBackColor = false;
+            this.bTab1.Click += new System.EventHandler(this.bTab1_Click);
+            // 
+            // panelTabs
+            // 
+            this.panelTabs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.MenuBarAnimator.SetDecoration(this.panelTabs, BunifuAnimatorNS.DecorationType.None);
+            this.panelTabs.Location = new System.Drawing.Point(200, 99);
+            this.panelTabs.Name = "panelTabs";
+            this.panelTabs.Size = new System.Drawing.Size(919, 535);
+            this.panelTabs.TabIndex = 10;
+            // 
+            // MenuBarAnimator
+            // 
+            this.MenuBarAnimator.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndHorizSlide;
+            this.MenuBarAnimator.Cursor = null;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.MenuBarAnimator.DefaultAnimation = animation2;
+            this.MenuBarAnimator.Interval = 1000;
+            this.MenuBarAnimator.TimeStep = 0.1F;
+            // 
+            // bEinstellungen
+            // 
+            this.bEinstellungen.Activecolor = System.Drawing.Color.LimeGreen;
+            this.bEinstellungen.BackColor = System.Drawing.Color.ForestGreen;
+            this.bEinstellungen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bEinstellungen.BorderRadius = 0;
+            this.bEinstellungen.ButtonText = "  Einstellungen";
+            this.bEinstellungen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuBarAnimator.SetDecoration(this.bEinstellungen, BunifuAnimatorNS.DecorationType.None);
+            this.bEinstellungen.DisabledColor = System.Drawing.Color.Gray;
+            this.bEinstellungen.Iconcolor = System.Drawing.Color.Transparent;
+            this.bEinstellungen.Iconimage = ((System.Drawing.Image)(resources.GetObject("bEinstellungen.Iconimage")));
+            this.bEinstellungen.Iconimage_right = null;
+            this.bEinstellungen.Iconimage_right_Selected = null;
+            this.bEinstellungen.Iconimage_Selected = null;
+            this.bEinstellungen.IconMarginLeft = 0;
+            this.bEinstellungen.IconMarginRight = 0;
+            this.bEinstellungen.IconRightVisible = true;
+            this.bEinstellungen.IconRightZoom = 0D;
+            this.bEinstellungen.IconVisible = true;
+            this.bEinstellungen.IconZoom = 50D;
+            this.bEinstellungen.IsTab = false;
+            this.bEinstellungen.Location = new System.Drawing.Point(0, 0);
+            this.bEinstellungen.Name = "bEinstellungen";
+            this.bEinstellungen.Normalcolor = System.Drawing.Color.ForestGreen;
+            this.bEinstellungen.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bEinstellungen.OnHoverTextColor = System.Drawing.Color.White;
+            this.bEinstellungen.selected = false;
+            this.bEinstellungen.Size = new System.Drawing.Size(200, 44);
+            this.bEinstellungen.TabIndex = 16;
+            this.bEinstellungen.Text = "  Einstellungen";
+            this.bEinstellungen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bEinstellungen.Textcolor = System.Drawing.Color.White;
+            this.bEinstellungen.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // bSuchen
+            // 
+            this.bSuchen.Activecolor = System.Drawing.Color.LimeGreen;
+            this.bSuchen.BackColor = System.Drawing.Color.ForestGreen;
+            this.bSuchen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bSuchen.BorderRadius = 0;
+            this.bSuchen.ButtonText = "  Suchen";
+            this.bSuchen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuBarAnimator.SetDecoration(this.bSuchen, BunifuAnimatorNS.DecorationType.None);
+            this.bSuchen.DisabledColor = System.Drawing.Color.Gray;
+            this.bSuchen.Iconcolor = System.Drawing.Color.Transparent;
+            this.bSuchen.Iconimage = ((System.Drawing.Image)(resources.GetObject("bSuchen.Iconimage")));
+            this.bSuchen.Iconimage_right = null;
+            this.bSuchen.Iconimage_right_Selected = null;
+            this.bSuchen.Iconimage_Selected = null;
+            this.bSuchen.IconMarginLeft = 0;
+            this.bSuchen.IconMarginRight = 0;
+            this.bSuchen.IconRightVisible = true;
+            this.bSuchen.IconRightZoom = 0D;
+            this.bSuchen.IconVisible = true;
+            this.bSuchen.IconZoom = 50D;
+            this.bSuchen.IsTab = false;
+            this.bSuchen.Location = new System.Drawing.Point(0, 0);
+            this.bSuchen.Name = "bSuchen";
+            this.bSuchen.Normalcolor = System.Drawing.Color.ForestGreen;
+            this.bSuchen.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bSuchen.OnHoverTextColor = System.Drawing.Color.White;
+            this.bSuchen.selected = false;
+            this.bSuchen.Size = new System.Drawing.Size(200, 44);
+            this.bSuchen.TabIndex = 17;
+            this.bSuchen.Text = "  Suchen";
+            this.bSuchen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bSuchen.Textcolor = System.Drawing.Color.White;
+            this.bSuchen.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // bSnippets
+            // 
+            this.bSnippets.Activecolor = System.Drawing.Color.LimeGreen;
+            this.bSnippets.BackColor = System.Drawing.Color.ForestGreen;
+            this.bSnippets.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bSnippets.BorderRadius = 0;
+            this.bSnippets.ButtonText = "  Snippets";
+            this.bSnippets.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuBarAnimator.SetDecoration(this.bSnippets, BunifuAnimatorNS.DecorationType.None);
+            this.bSnippets.DisabledColor = System.Drawing.Color.Gray;
+            this.bSnippets.Iconcolor = System.Drawing.Color.Transparent;
+            this.bSnippets.Iconimage = ((System.Drawing.Image)(resources.GetObject("bSnippets.Iconimage")));
+            this.bSnippets.Iconimage_right = null;
+            this.bSnippets.Iconimage_right_Selected = null;
+            this.bSnippets.Iconimage_Selected = null;
+            this.bSnippets.IconMarginLeft = 0;
+            this.bSnippets.IconMarginRight = 0;
+            this.bSnippets.IconRightVisible = true;
+            this.bSnippets.IconRightZoom = 0D;
+            this.bSnippets.IconVisible = true;
+            this.bSnippets.IconZoom = 50D;
+            this.bSnippets.IsTab = false;
+            this.bSnippets.Location = new System.Drawing.Point(0, 0);
+            this.bSnippets.Name = "bSnippets";
+            this.bSnippets.Normalcolor = System.Drawing.Color.ForestGreen;
+            this.bSnippets.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bSnippets.OnHoverTextColor = System.Drawing.Color.White;
+            this.bSnippets.selected = false;
+            this.bSnippets.Size = new System.Drawing.Size(200, 44);
+            this.bSnippets.TabIndex = 15;
+            this.bSnippets.Text = "  Snippets";
+            this.bSnippets.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bSnippets.Textcolor = System.Drawing.Color.White;
+            this.bSnippets.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // bBearbeiten
+            // 
+            this.bBearbeiten.Activecolor = System.Drawing.Color.LimeGreen;
+            this.bBearbeiten.BackColor = System.Drawing.Color.ForestGreen;
+            this.bBearbeiten.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bBearbeiten.BorderRadius = 0;
+            this.bBearbeiten.ButtonText = "  Bearbeiten";
+            this.bBearbeiten.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuBarAnimator.SetDecoration(this.bBearbeiten, BunifuAnimatorNS.DecorationType.None);
+            this.bBearbeiten.DisabledColor = System.Drawing.Color.Gray;
+            this.bBearbeiten.Iconcolor = System.Drawing.Color.Transparent;
+            this.bBearbeiten.Iconimage = ((System.Drawing.Image)(resources.GetObject("bBearbeiten.Iconimage")));
+            this.bBearbeiten.Iconimage_right = null;
+            this.bBearbeiten.Iconimage_right_Selected = null;
+            this.bBearbeiten.Iconimage_Selected = null;
+            this.bBearbeiten.IconMarginLeft = 0;
+            this.bBearbeiten.IconMarginRight = 0;
+            this.bBearbeiten.IconRightVisible = true;
+            this.bBearbeiten.IconRightZoom = 0D;
+            this.bBearbeiten.IconVisible = true;
+            this.bBearbeiten.IconZoom = 47D;
+            this.bBearbeiten.IsTab = false;
+            this.bBearbeiten.Location = new System.Drawing.Point(0, 0);
+            this.bBearbeiten.Name = "bBearbeiten";
+            this.bBearbeiten.Normalcolor = System.Drawing.Color.ForestGreen;
+            this.bBearbeiten.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bBearbeiten.OnHoverTextColor = System.Drawing.Color.White;
+            this.bBearbeiten.selected = false;
+            this.bBearbeiten.Size = new System.Drawing.Size(200, 44);
+            this.bBearbeiten.TabIndex = 14;
+            this.bBearbeiten.Text = "  Bearbeiten";
+            this.bBearbeiten.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bBearbeiten.Textcolor = System.Drawing.Color.White;
+            this.bBearbeiten.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bBearbeiten.Click += new System.EventHandler(this.bBearbeiten_Click);
+            // 
+            // bDatei
+            // 
+            this.bDatei.Activecolor = System.Drawing.Color.LimeGreen;
+            this.bDatei.BackColor = System.Drawing.Color.ForestGreen;
+            this.bDatei.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bDatei.BorderRadius = 0;
+            this.bDatei.ButtonText = "  Datei";
+            this.bDatei.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MenuBarAnimator.SetDecoration(this.bDatei, BunifuAnimatorNS.DecorationType.None);
+            this.bDatei.DisabledColor = System.Drawing.Color.Gray;
+            this.bDatei.Iconcolor = System.Drawing.Color.Transparent;
+            this.bDatei.Iconimage = ((System.Drawing.Image)(resources.GetObject("bDatei.Iconimage")));
+            this.bDatei.Iconimage_right = null;
+            this.bDatei.Iconimage_right_Selected = null;
+            this.bDatei.Iconimage_Selected = null;
+            this.bDatei.IconMarginLeft = 0;
+            this.bDatei.IconMarginRight = 0;
+            this.bDatei.IconRightVisible = true;
+            this.bDatei.IconRightZoom = 0D;
+            this.bDatei.IconVisible = true;
+            this.bDatei.IconZoom = 50D;
+            this.bDatei.IsTab = false;
+            this.bDatei.Location = new System.Drawing.Point(0, 0);
+            this.bDatei.Name = "bDatei";
+            this.bDatei.Normalcolor = System.Drawing.Color.ForestGreen;
+            this.bDatei.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bDatei.OnHoverTextColor = System.Drawing.Color.White;
+            this.bDatei.selected = false;
+            this.bDatei.Size = new System.Drawing.Size(200, 44);
+            this.bDatei.TabIndex = 13;
+            this.bDatei.Text = "  Datei";
+            this.bDatei.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bDatei.Textcolor = System.Drawing.Color.White;
+            this.bDatei.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bDatei.Click += new System.EventHandler(this.bDatei_Click);
             // 
             // bMinimize
             // 
@@ -145,318 +458,6 @@ namespace MapMakingStudio
             this.bClose.Zoom = 10;
             this.bClose.Click += new System.EventHandler(this.bClose_Click);
             // 
-            // lbMapMakingStudio
-            // 
-            this.lbMapMakingStudio.AutoSize = true;
-            this.MenuBarAnimator.SetDecoration(this.lbMapMakingStudio, BunifuAnimatorNS.DecorationType.None);
-            this.lbMapMakingStudio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMapMakingStudio.ForeColor = System.Drawing.Color.White;
-            this.lbMapMakingStudio.Location = new System.Drawing.Point(12, 22);
-            this.lbMapMakingStudio.Name = "lbMapMakingStudio";
-            this.lbMapMakingStudio.Size = new System.Drawing.Size(238, 21);
-            this.lbMapMakingStudio.TabIndex = 1;
-            this.lbMapMakingStudio.Text = "MapMakingStudio by Wolf066LP";
-            // 
-            // panelMenuBar
-            // 
-            this.panelMenuBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.panelMenuBar.Controls.Add(this.panelEinstellungen);
-            this.panelMenuBar.Controls.Add(this.panelSuche);
-            this.panelMenuBar.Controls.Add(this.panelSnippets);
-            this.panelMenuBar.Controls.Add(this.panelBearbeiten);
-            this.panelMenuBar.Controls.Add(this.panelDatei);
-            this.MenuBarAnimator.SetDecoration(this.panelMenuBar, BunifuAnimatorNS.DecorationType.None);
-            this.panelMenuBar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenuBar.Location = new System.Drawing.Point(0, 61);
-            this.panelMenuBar.Name = "panelMenuBar";
-            this.panelMenuBar.Size = new System.Drawing.Size(200, 576);
-            this.panelMenuBar.TabIndex = 8;
-            // 
-            // panelEinstellungen
-            // 
-            this.panelEinstellungen.Controls.Add(this.bEinstellungen);
-            this.MenuBarAnimator.SetDecoration(this.panelEinstellungen, BunifuAnimatorNS.DecorationType.None);
-            this.panelEinstellungen.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelEinstellungen.Location = new System.Drawing.Point(0, 172);
-            this.panelEinstellungen.Name = "panelEinstellungen";
-            this.panelEinstellungen.Size = new System.Drawing.Size(200, 43);
-            this.panelEinstellungen.TabIndex = 17;
-            // 
-            // bEinstellungen
-            // 
-            this.bEinstellungen.Activecolor = System.Drawing.Color.LimeGreen;
-            this.bEinstellungen.BackColor = System.Drawing.Color.ForestGreen;
-            this.bEinstellungen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bEinstellungen.BorderRadius = 0;
-            this.bEinstellungen.ButtonText = "  Einstellungen";
-            this.bEinstellungen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MenuBarAnimator.SetDecoration(this.bEinstellungen, BunifuAnimatorNS.DecorationType.None);
-            this.bEinstellungen.DisabledColor = System.Drawing.Color.Gray;
-            this.bEinstellungen.Iconcolor = System.Drawing.Color.Transparent;
-            this.bEinstellungen.Iconimage = ((System.Drawing.Image)(resources.GetObject("bEinstellungen.Iconimage")));
-            this.bEinstellungen.Iconimage_right = null;
-            this.bEinstellungen.Iconimage_right_Selected = null;
-            this.bEinstellungen.Iconimage_Selected = null;
-            this.bEinstellungen.IconMarginLeft = 0;
-            this.bEinstellungen.IconMarginRight = 0;
-            this.bEinstellungen.IconRightVisible = true;
-            this.bEinstellungen.IconRightZoom = 0D;
-            this.bEinstellungen.IconVisible = true;
-            this.bEinstellungen.IconZoom = 50D;
-            this.bEinstellungen.IsTab = false;
-            this.bEinstellungen.Location = new System.Drawing.Point(0, 0);
-            this.bEinstellungen.Name = "bEinstellungen";
-            this.bEinstellungen.Normalcolor = System.Drawing.Color.ForestGreen;
-            this.bEinstellungen.OnHovercolor = System.Drawing.Color.LimeGreen;
-            this.bEinstellungen.OnHoverTextColor = System.Drawing.Color.White;
-            this.bEinstellungen.selected = false;
-            this.bEinstellungen.Size = new System.Drawing.Size(200, 44);
-            this.bEinstellungen.TabIndex = 16;
-            this.bEinstellungen.Text = "  Einstellungen";
-            this.bEinstellungen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bEinstellungen.Textcolor = System.Drawing.Color.White;
-            this.bEinstellungen.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // panelSuche
-            // 
-            this.panelSuche.Controls.Add(this.bSuchen);
-            this.MenuBarAnimator.SetDecoration(this.panelSuche, BunifuAnimatorNS.DecorationType.None);
-            this.panelSuche.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSuche.Location = new System.Drawing.Point(0, 129);
-            this.panelSuche.Name = "panelSuche";
-            this.panelSuche.Size = new System.Drawing.Size(200, 43);
-            this.panelSuche.TabIndex = 18;
-            // 
-            // bSuchen
-            // 
-            this.bSuchen.Activecolor = System.Drawing.Color.LimeGreen;
-            this.bSuchen.BackColor = System.Drawing.Color.ForestGreen;
-            this.bSuchen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bSuchen.BorderRadius = 0;
-            this.bSuchen.ButtonText = "  Suchen";
-            this.bSuchen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MenuBarAnimator.SetDecoration(this.bSuchen, BunifuAnimatorNS.DecorationType.None);
-            this.bSuchen.DisabledColor = System.Drawing.Color.Gray;
-            this.bSuchen.Iconcolor = System.Drawing.Color.Transparent;
-            this.bSuchen.Iconimage = ((System.Drawing.Image)(resources.GetObject("bSuchen.Iconimage")));
-            this.bSuchen.Iconimage_right = null;
-            this.bSuchen.Iconimage_right_Selected = null;
-            this.bSuchen.Iconimage_Selected = null;
-            this.bSuchen.IconMarginLeft = 0;
-            this.bSuchen.IconMarginRight = 0;
-            this.bSuchen.IconRightVisible = true;
-            this.bSuchen.IconRightZoom = 0D;
-            this.bSuchen.IconVisible = true;
-            this.bSuchen.IconZoom = 50D;
-            this.bSuchen.IsTab = false;
-            this.bSuchen.Location = new System.Drawing.Point(0, 0);
-            this.bSuchen.Name = "bSuchen";
-            this.bSuchen.Normalcolor = System.Drawing.Color.ForestGreen;
-            this.bSuchen.OnHovercolor = System.Drawing.Color.LimeGreen;
-            this.bSuchen.OnHoverTextColor = System.Drawing.Color.White;
-            this.bSuchen.selected = false;
-            this.bSuchen.Size = new System.Drawing.Size(200, 44);
-            this.bSuchen.TabIndex = 17;
-            this.bSuchen.Text = "  Suchen";
-            this.bSuchen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bSuchen.Textcolor = System.Drawing.Color.White;
-            this.bSuchen.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // panelSnippets
-            // 
-            this.panelSnippets.Controls.Add(this.bSnippets);
-            this.MenuBarAnimator.SetDecoration(this.panelSnippets, BunifuAnimatorNS.DecorationType.None);
-            this.panelSnippets.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSnippets.Location = new System.Drawing.Point(0, 86);
-            this.panelSnippets.Name = "panelSnippets";
-            this.panelSnippets.Size = new System.Drawing.Size(200, 43);
-            this.panelSnippets.TabIndex = 18;
-            // 
-            // bSnippets
-            // 
-            this.bSnippets.Activecolor = System.Drawing.Color.LimeGreen;
-            this.bSnippets.BackColor = System.Drawing.Color.ForestGreen;
-            this.bSnippets.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bSnippets.BorderRadius = 0;
-            this.bSnippets.ButtonText = "  Snippets";
-            this.bSnippets.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MenuBarAnimator.SetDecoration(this.bSnippets, BunifuAnimatorNS.DecorationType.None);
-            this.bSnippets.DisabledColor = System.Drawing.Color.Gray;
-            this.bSnippets.Iconcolor = System.Drawing.Color.Transparent;
-            this.bSnippets.Iconimage = ((System.Drawing.Image)(resources.GetObject("bSnippets.Iconimage")));
-            this.bSnippets.Iconimage_right = null;
-            this.bSnippets.Iconimage_right_Selected = null;
-            this.bSnippets.Iconimage_Selected = null;
-            this.bSnippets.IconMarginLeft = 0;
-            this.bSnippets.IconMarginRight = 0;
-            this.bSnippets.IconRightVisible = true;
-            this.bSnippets.IconRightZoom = 0D;
-            this.bSnippets.IconVisible = true;
-            this.bSnippets.IconZoom = 50D;
-            this.bSnippets.IsTab = false;
-            this.bSnippets.Location = new System.Drawing.Point(0, 0);
-            this.bSnippets.Name = "bSnippets";
-            this.bSnippets.Normalcolor = System.Drawing.Color.ForestGreen;
-            this.bSnippets.OnHovercolor = System.Drawing.Color.LimeGreen;
-            this.bSnippets.OnHoverTextColor = System.Drawing.Color.White;
-            this.bSnippets.selected = false;
-            this.bSnippets.Size = new System.Drawing.Size(200, 44);
-            this.bSnippets.TabIndex = 15;
-            this.bSnippets.Text = "  Snippets";
-            this.bSnippets.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bSnippets.Textcolor = System.Drawing.Color.White;
-            this.bSnippets.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // panelBearbeiten
-            // 
-            this.panelBearbeiten.Controls.Add(this.bBearbeiten);
-            this.MenuBarAnimator.SetDecoration(this.panelBearbeiten, BunifuAnimatorNS.DecorationType.None);
-            this.panelBearbeiten.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBearbeiten.Location = new System.Drawing.Point(0, 43);
-            this.panelBearbeiten.Name = "panelBearbeiten";
-            this.panelBearbeiten.Size = new System.Drawing.Size(200, 43);
-            this.panelBearbeiten.TabIndex = 18;
-            // 
-            // bBearbeiten
-            // 
-            this.bBearbeiten.Activecolor = System.Drawing.Color.LimeGreen;
-            this.bBearbeiten.BackColor = System.Drawing.Color.ForestGreen;
-            this.bBearbeiten.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bBearbeiten.BorderRadius = 0;
-            this.bBearbeiten.ButtonText = "  Bearbeiten";
-            this.bBearbeiten.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MenuBarAnimator.SetDecoration(this.bBearbeiten, BunifuAnimatorNS.DecorationType.None);
-            this.bBearbeiten.DisabledColor = System.Drawing.Color.Gray;
-            this.bBearbeiten.Iconcolor = System.Drawing.Color.Transparent;
-            this.bBearbeiten.Iconimage = ((System.Drawing.Image)(resources.GetObject("bBearbeiten.Iconimage")));
-            this.bBearbeiten.Iconimage_right = null;
-            this.bBearbeiten.Iconimage_right_Selected = null;
-            this.bBearbeiten.Iconimage_Selected = null;
-            this.bBearbeiten.IconMarginLeft = 0;
-            this.bBearbeiten.IconMarginRight = 0;
-            this.bBearbeiten.IconRightVisible = true;
-            this.bBearbeiten.IconRightZoom = 0D;
-            this.bBearbeiten.IconVisible = true;
-            this.bBearbeiten.IconZoom = 47D;
-            this.bBearbeiten.IsTab = false;
-            this.bBearbeiten.Location = new System.Drawing.Point(0, 0);
-            this.bBearbeiten.Name = "bBearbeiten";
-            this.bBearbeiten.Normalcolor = System.Drawing.Color.ForestGreen;
-            this.bBearbeiten.OnHovercolor = System.Drawing.Color.LimeGreen;
-            this.bBearbeiten.OnHoverTextColor = System.Drawing.Color.White;
-            this.bBearbeiten.selected = false;
-            this.bBearbeiten.Size = new System.Drawing.Size(200, 44);
-            this.bBearbeiten.TabIndex = 14;
-            this.bBearbeiten.Text = "  Bearbeiten";
-            this.bBearbeiten.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bBearbeiten.Textcolor = System.Drawing.Color.White;
-            this.bBearbeiten.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bBearbeiten.Click += new System.EventHandler(this.bBearbeiten_Click);
-            // 
-            // panelDatei
-            // 
-            this.panelDatei.Controls.Add(this.bDatei);
-            this.MenuBarAnimator.SetDecoration(this.panelDatei, BunifuAnimatorNS.DecorationType.None);
-            this.panelDatei.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelDatei.Location = new System.Drawing.Point(0, 0);
-            this.panelDatei.Name = "panelDatei";
-            this.panelDatei.Size = new System.Drawing.Size(200, 43);
-            this.panelDatei.TabIndex = 18;
-            // 
-            // bDatei
-            // 
-            this.bDatei.Activecolor = System.Drawing.Color.LimeGreen;
-            this.bDatei.BackColor = System.Drawing.Color.ForestGreen;
-            this.bDatei.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bDatei.BorderRadius = 0;
-            this.bDatei.ButtonText = "  Datei";
-            this.bDatei.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MenuBarAnimator.SetDecoration(this.bDatei, BunifuAnimatorNS.DecorationType.None);
-            this.bDatei.DisabledColor = System.Drawing.Color.Gray;
-            this.bDatei.Iconcolor = System.Drawing.Color.Transparent;
-            this.bDatei.Iconimage = ((System.Drawing.Image)(resources.GetObject("bDatei.Iconimage")));
-            this.bDatei.Iconimage_right = null;
-            this.bDatei.Iconimage_right_Selected = null;
-            this.bDatei.Iconimage_Selected = null;
-            this.bDatei.IconMarginLeft = 0;
-            this.bDatei.IconMarginRight = 0;
-            this.bDatei.IconRightVisible = true;
-            this.bDatei.IconRightZoom = 0D;
-            this.bDatei.IconVisible = true;
-            this.bDatei.IconZoom = 50D;
-            this.bDatei.IsTab = false;
-            this.bDatei.Location = new System.Drawing.Point(0, 0);
-            this.bDatei.Name = "bDatei";
-            this.bDatei.Normalcolor = System.Drawing.Color.ForestGreen;
-            this.bDatei.OnHovercolor = System.Drawing.Color.LimeGreen;
-            this.bDatei.OnHoverTextColor = System.Drawing.Color.White;
-            this.bDatei.selected = false;
-            this.bDatei.Size = new System.Drawing.Size(200, 44);
-            this.bDatei.TabIndex = 13;
-            this.bDatei.Text = "  Datei";
-            this.bDatei.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bDatei.Textcolor = System.Drawing.Color.White;
-            this.bDatei.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bDatei.Click += new System.EventHandler(this.bDatei_Click);
-            // 
-            // panelTabBar
-            // 
-            this.panelTabBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panelTabBar.Controls.Add(this.bTab1);
-            this.MenuBarAnimator.SetDecoration(this.panelTabBar, BunifuAnimatorNS.DecorationType.None);
-            this.panelTabBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTabBar.Location = new System.Drawing.Point(200, 61);
-            this.panelTabBar.Name = "panelTabBar";
-            this.panelTabBar.Size = new System.Drawing.Size(922, 32);
-            this.panelTabBar.TabIndex = 9;
-            // 
-            // bTab1
-            // 
-            this.bTab1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.MenuBarAnimator.SetDecoration(this.bTab1, BunifuAnimatorNS.DecorationType.None);
-            this.bTab1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bTab1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bTab1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bTab1.ForeColor = System.Drawing.Color.White;
-            this.bTab1.Location = new System.Drawing.Point(0, 0);
-            this.bTab1.Name = "bTab1";
-            this.bTab1.Size = new System.Drawing.Size(119, 32);
-            this.bTab1.TabIndex = 7;
-            this.bTab1.Text = "Tab";
-            this.bTab1.UseVisualStyleBackColor = false;
-            // 
-            // panelTabs
-            // 
-            this.panelTabs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.MenuBarAnimator.SetDecoration(this.panelTabs, BunifuAnimatorNS.DecorationType.None);
-            this.panelTabs.Location = new System.Drawing.Point(200, 93);
-            this.panelTabs.Name = "panelTabs";
-            this.panelTabs.Size = new System.Drawing.Size(919, 541);
-            this.panelTabs.TabIndex = 10;
-            // 
-            // MenuBarAnimator
-            // 
-            this.MenuBarAnimator.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndHorizSlide;
-            this.MenuBarAnimator.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.MenuBarAnimator.DefaultAnimation = animation2;
-            this.MenuBarAnimator.Interval = 1000;
-            this.MenuBarAnimator.TimeStep = 0.1F;
-            // 
             // MapMakingStudio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -477,9 +478,6 @@ namespace MapMakingStudio
             this.HeaderBar.ResumeLayout(false);
             this.HeaderBar.PerformLayout();
             this.panelHeaderButtons.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bMinimize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bMaximize)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bClose)).EndInit();
             this.panelMenuBar.ResumeLayout(false);
             this.panelEinstellungen.ResumeLayout(false);
             this.panelSuche.ResumeLayout(false);
@@ -487,6 +485,9 @@ namespace MapMakingStudio
             this.panelBearbeiten.ResumeLayout(false);
             this.panelDatei.ResumeLayout(false);
             this.panelTabBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.bMinimize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bMaximize)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bClose)).EndInit();
             this.ResumeLayout(false);
 
         }

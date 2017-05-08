@@ -39,7 +39,7 @@
             // 
             // bZurück
             // 
-            this.bZurück.Activecolor = System.Drawing.Color.LimeGreen;
+            this.bZurück.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bZurück.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.bZurück.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bZurück.BorderRadius = 0;
@@ -61,7 +61,7 @@
             this.bZurück.Location = new System.Drawing.Point(1, 0);
             this.bZurück.Name = "bZurück";
             this.bZurück.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.bZurück.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bZurück.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bZurück.OnHoverTextColor = System.Drawing.Color.White;
             this.bZurück.selected = false;
             this.bZurück.Size = new System.Drawing.Size(200, 44);
@@ -73,7 +73,7 @@
             // 
             // bWiederherstellen
             // 
-            this.bWiederherstellen.Activecolor = System.Drawing.Color.LimeGreen;
+            this.bWiederherstellen.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bWiederherstellen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.bWiederherstellen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bWiederherstellen.BorderRadius = 0;
@@ -95,7 +95,7 @@
             this.bWiederherstellen.Location = new System.Drawing.Point(1, 43);
             this.bWiederherstellen.Name = "bWiederherstellen";
             this.bWiederherstellen.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.bWiederherstellen.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bWiederherstellen.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bWiederherstellen.OnHoverTextColor = System.Drawing.Color.White;
             this.bWiederherstellen.selected = false;
             this.bWiederherstellen.Size = new System.Drawing.Size(200, 44);
@@ -107,7 +107,7 @@
             // 
             // bKopieren
             // 
-            this.bKopieren.Activecolor = System.Drawing.Color.LimeGreen;
+            this.bKopieren.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bKopieren.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.bKopieren.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bKopieren.BorderRadius = 0;
@@ -129,7 +129,7 @@
             this.bKopieren.Location = new System.Drawing.Point(1, 93);
             this.bKopieren.Name = "bKopieren";
             this.bKopieren.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.bKopieren.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bKopieren.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bKopieren.OnHoverTextColor = System.Drawing.Color.White;
             this.bKopieren.selected = false;
             this.bKopieren.Size = new System.Drawing.Size(200, 44);
@@ -141,7 +141,7 @@
             // 
             // bAusschneiden
             // 
-            this.bAusschneiden.Activecolor = System.Drawing.Color.LimeGreen;
+            this.bAusschneiden.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bAusschneiden.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.bAusschneiden.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bAusschneiden.BorderRadius = 0;
@@ -163,7 +163,7 @@
             this.bAusschneiden.Location = new System.Drawing.Point(1, 136);
             this.bAusschneiden.Name = "bAusschneiden";
             this.bAusschneiden.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.bAusschneiden.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bAusschneiden.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bAusschneiden.OnHoverTextColor = System.Drawing.Color.White;
             this.bAusschneiden.selected = false;
             this.bAusschneiden.Size = new System.Drawing.Size(200, 44);
@@ -175,7 +175,7 @@
             // 
             // bEinfügen
             // 
-            this.bEinfügen.Activecolor = System.Drawing.Color.LimeGreen;
+            this.bEinfügen.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bEinfügen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.bEinfügen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bEinfügen.BorderRadius = 0;
@@ -197,7 +197,7 @@
             this.bEinfügen.Location = new System.Drawing.Point(1, 179);
             this.bEinfügen.Name = "bEinfügen";
             this.bEinfügen.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.bEinfügen.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bEinfügen.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bEinfügen.OnHoverTextColor = System.Drawing.Color.White;
             this.bEinfügen.selected = false;
             this.bEinfügen.Size = new System.Drawing.Size(200, 44);
@@ -209,7 +209,7 @@
             // 
             // bLöschen
             // 
-            this.bLöschen.Activecolor = System.Drawing.Color.LimeGreen;
+            this.bLöschen.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bLöschen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.bLöschen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bLöschen.BorderRadius = 0;
@@ -231,7 +231,7 @@
             this.bLöschen.Location = new System.Drawing.Point(1, 229);
             this.bLöschen.Name = "bLöschen";
             this.bLöschen.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.bLöschen.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bLöschen.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bLöschen.OnHoverTextColor = System.Drawing.Color.White;
             this.bLöschen.selected = false;
             this.bLöschen.Size = new System.Drawing.Size(200, 44);

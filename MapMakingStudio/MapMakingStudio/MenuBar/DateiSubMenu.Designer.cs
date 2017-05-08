@@ -37,7 +37,7 @@
             // 
             // bNeu
             // 
-            this.bNeu.Activecolor = System.Drawing.Color.LimeGreen;
+            this.bNeu.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bNeu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.bNeu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bNeu.BorderRadius = 0;
@@ -56,13 +56,13 @@
             this.bNeu.IconVisible = true;
             this.bNeu.IconZoom = 50D;
             this.bNeu.IsTab = false;
-            this.bNeu.Location = new System.Drawing.Point(1, 0);
+            this.bNeu.Location = new System.Drawing.Point(0, 0);
             this.bNeu.Name = "bNeu";
             this.bNeu.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.bNeu.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bNeu.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bNeu.OnHoverTextColor = System.Drawing.Color.White;
             this.bNeu.selected = false;
-            this.bNeu.Size = new System.Drawing.Size(200, 44);
+            this.bNeu.Size = new System.Drawing.Size(201, 44);
             this.bNeu.TabIndex = 8;
             this.bNeu.Text = "  Neu";
             this.bNeu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -71,7 +71,7 @@
             // 
             // bÖffnen
             // 
-            this.bÖffnen.Activecolor = System.Drawing.Color.LimeGreen;
+            this.bÖffnen.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bÖffnen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.bÖffnen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bÖffnen.BorderRadius = 0;
@@ -93,7 +93,7 @@
             this.bÖffnen.Location = new System.Drawing.Point(0, 53);
             this.bÖffnen.Name = "bÖffnen";
             this.bÖffnen.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.bÖffnen.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bÖffnen.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bÖffnen.OnHoverTextColor = System.Drawing.Color.White;
             this.bÖffnen.selected = false;
             this.bÖffnen.Size = new System.Drawing.Size(200, 44);
@@ -105,7 +105,7 @@
             // 
             // bSpeichern
             // 
-            this.bSpeichern.Activecolor = System.Drawing.Color.LimeGreen;
+            this.bSpeichern.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bSpeichern.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.bSpeichern.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bSpeichern.BorderRadius = 0;
@@ -127,7 +127,7 @@
             this.bSpeichern.Location = new System.Drawing.Point(0, 107);
             this.bSpeichern.Name = "bSpeichern";
             this.bSpeichern.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.bSpeichern.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bSpeichern.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bSpeichern.OnHoverTextColor = System.Drawing.Color.White;
             this.bSpeichern.selected = false;
             this.bSpeichern.Size = new System.Drawing.Size(200, 44);
@@ -139,7 +139,7 @@
             // 
             // bSpeichernUnter
             // 
-            this.bSpeichernUnter.Activecolor = System.Drawing.Color.LimeGreen;
+            this.bSpeichernUnter.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bSpeichernUnter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.bSpeichernUnter.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bSpeichernUnter.BorderRadius = 0;
@@ -161,7 +161,7 @@
             this.bSpeichernUnter.Location = new System.Drawing.Point(0, 150);
             this.bSpeichernUnter.Name = "bSpeichernUnter";
             this.bSpeichernUnter.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.bSpeichernUnter.OnHovercolor = System.Drawing.Color.LimeGreen;
+            this.bSpeichernUnter.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.bSpeichernUnter.OnHoverTextColor = System.Drawing.Color.White;
             this.bSpeichernUnter.selected = false;
             this.bSpeichernUnter.Size = new System.Drawing.Size(200, 44);

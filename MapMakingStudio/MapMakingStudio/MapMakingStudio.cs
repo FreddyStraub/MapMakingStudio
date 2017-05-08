@@ -137,6 +137,25 @@ namespace MapMakingStudio
             }
         }
 
+        private void bTab1_Click(object sender, EventArgs e)
+        {
+
+            Tabs.CodeTab ct = new Tabs.CodeTab();
+
+            ct.TopLevel = false;
+            ct.AutoScroll = true;
+
+            ct.Dock = DockStyle.Fill;
+
+            panelTabs.Controls.Add(ct);
+
+            ct.Show();
+
+
+
+
+        }
+
         private void bBearbeiten_Click(object sender, EventArgs e)
         {
 
