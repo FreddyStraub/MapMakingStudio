@@ -145,9 +145,10 @@ namespace MapMakingStudio
             ct.TopLevel = false;
             ct.AutoScroll = true;
 
-            ct.Dock = DockStyle.Fill;
 
             panelTabs.Controls.Add(ct);
+            ct.Dock = DockStyle.Fill;
+
 
             ct.Show();
 
@@ -168,6 +169,8 @@ namespace MapMakingStudio
                 MenuBar.toggle(Menus.Bearbeiten, MenuStatus.Open);
 
             }
+
+
 
         }
 
