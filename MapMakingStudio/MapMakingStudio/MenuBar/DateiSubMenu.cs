@@ -16,5 +16,14 @@ namespace MapMakingStudio.MenuBarSubMenus
         {
             InitializeComponent();
         }
+
+
+
+        private void bNeu_Click(object sender, EventArgs e)
+        {
+
+            MapMakingStudio mms = (MapMakingStudio)Application.OpenForms[0];
+            Tabs.Tabs.CreateNewTab(mms.tabControl);
+        }
     }
 }

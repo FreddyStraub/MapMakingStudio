@@ -32,7 +32,7 @@ namespace MapMakingStudio
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation9 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapMakingStudio));
             this.HeaderBar = new System.Windows.Forms.Panel();
             this.panelHeaderButtons = new System.Windows.Forms.Panel();
@@ -51,10 +51,11 @@ namespace MapMakingStudio
             this.bBearbeiten = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panelDatei = new System.Windows.Forms.Panel();
             this.bDatei = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.panelTabBar = new System.Windows.Forms.Panel();
-            this.bTab1 = new System.Windows.Forms.Button();
-            this.panelTabs = new System.Windows.Forms.Panel();
             this.MenuBarAnimator = new BunifuAnimatorNS.BunifuTransition(this.components);
+            this.tabControl = new VisualStudioTabControl.VisualStudioTabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.HeaderBar.SuspendLayout();
             this.panelHeaderButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bMinimize)).BeginInit();
@@ -66,7 +67,7 @@ namespace MapMakingStudio
             this.panelSnippets.SuspendLayout();
             this.panelBearbeiten.SuspendLayout();
             this.panelDatei.SuspendLayout();
-            this.panelTabBar.SuspendLayout();
+            this.tabControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // HeaderBar
@@ -216,6 +217,7 @@ namespace MapMakingStudio
             this.bEinstellungen.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.bEinstellungen.Textcolor = System.Drawing.Color.White;
             this.bEinstellungen.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bEinstellungen.Click += new System.EventHandler(this.bEinstellungen_Click);
             // 
             // panelSuche
             // 
@@ -399,64 +401,85 @@ namespace MapMakingStudio
             this.bDatei.TextFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bDatei.Click += new System.EventHandler(this.bDatei_Click);
             // 
-            // panelTabBar
-            // 
-            this.panelTabBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.panelTabBar.Controls.Add(this.bTab1);
-            this.MenuBarAnimator.SetDecoration(this.panelTabBar, BunifuAnimatorNS.DecorationType.None);
-            this.panelTabBar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTabBar.Location = new System.Drawing.Point(200, 61);
-            this.panelTabBar.Name = "panelTabBar";
-            this.panelTabBar.Size = new System.Drawing.Size(927, 32);
-            this.panelTabBar.TabIndex = 9;
-            // 
-            // bTab1
-            // 
-            this.bTab1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.MenuBarAnimator.SetDecoration(this.bTab1, BunifuAnimatorNS.DecorationType.None);
-            this.bTab1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.bTab1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bTab1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bTab1.ForeColor = System.Drawing.Color.White;
-            this.bTab1.Location = new System.Drawing.Point(0, 0);
-            this.bTab1.Name = "bTab1";
-            this.bTab1.Size = new System.Drawing.Size(119, 32);
-            this.bTab1.TabIndex = 7;
-            this.bTab1.Text = "Tab";
-            this.bTab1.UseVisualStyleBackColor = false;
-            this.bTab1.Click += new System.EventHandler(this.bTab1_Click);
-            // 
-            // panelTabs
-            // 
-            this.panelTabs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.MenuBarAnimator.SetDecoration(this.panelTabs, BunifuAnimatorNS.DecorationType.None);
-            this.panelTabs.Location = new System.Drawing.Point(200, 99);
-            this.panelTabs.Name = "panelTabs";
-            this.panelTabs.Size = new System.Drawing.Size(919, 530);
-            this.panelTabs.TabIndex = 10;
-            // 
             // MenuBarAnimator
             // 
             this.MenuBarAnimator.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndHorizSlide;
             this.MenuBarAnimator.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.MenuBarAnimator.DefaultAnimation = animation2;
+            animation9.AnimateOnlyDifferences = true;
+            animation9.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.BlindCoeff")));
+            animation9.LeafCoeff = 0F;
+            animation9.MaxTime = 1F;
+            animation9.MinTime = 0F;
+            animation9.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicCoeff")));
+            animation9.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation9.MosaicShift")));
+            animation9.MosaicSize = 0;
+            animation9.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            animation9.RotateCoeff = 0F;
+            animation9.RotateLimit = 0F;
+            animation9.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.ScaleCoeff")));
+            animation9.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation9.SlideCoeff")));
+            animation9.TimeCoeff = 0F;
+            animation9.TransparencyCoeff = 0F;
+            this.MenuBarAnimator.DefaultAnimation = animation9;
             this.MenuBarAnimator.Interval = 1000;
             this.MenuBarAnimator.TimeStep = 0.1F;
+            // 
+            // tabControl
+            // 
+            this.tabControl.ActiveColor = System.Drawing.Color.ForestGreen;
+            this.tabControl.AllowDrop = true;
+            this.tabControl.BackTabColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.tabControl.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.tabControl.ClosingButtonColor = System.Drawing.Color.White;
+            this.tabControl.ClosingMessage = null;
+            this.tabControl.Controls.Add(this.tabPage1);
+            this.tabControl.Controls.Add(this.tabPage2);
+            this.MenuBarAnimator.SetDecoration(this.tabControl, BunifuAnimatorNS.DecorationType.None);
+            this.tabControl.HeaderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.tabControl.HorizontalLineColor = System.Drawing.Color.ForestGreen;
+            this.tabControl.ItemSize = new System.Drawing.Size(240, 16);
+            this.tabControl.Location = new System.Drawing.Point(201, 61);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.SelectedTextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabControl.ShowClosingButton = true;
+            this.tabControl.ShowClosingMessage = false;
+            this.tabControl.Size = new System.Drawing.Size(914, 561);
+            this.tabControl.TabIndex = 9;
+            this.tabControl.TextColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.MenuBarAnimator.SetDecoration(this.tabPage1, BunifuAnimatorNS.DecorationType.None);
+            this.tabPage1.Location = new System.Drawing.Point(4, 20);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(906, 537);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.MenuBarAnimator.SetDecoration(this.tabPage2, BunifuAnimatorNS.DecorationType.None);
+            this.tabPage2.Location = new System.Drawing.Point(4, 20);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(906, 537);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.MenuBarAnimator.SetDecoration(this.tabPage3, BunifuAnimatorNS.DecorationType.None);
+            this.tabPage3.Location = new System.Drawing.Point(4, 20);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(906, 537);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
             // 
             // MapMakingStudio
             // 
@@ -464,8 +487,7 @@ namespace MapMakingStudio
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(1127, 634);
-            this.Controls.Add(this.panelTabs);
-            this.Controls.Add(this.panelTabBar);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.panelMenuBar);
             this.Controls.Add(this.HeaderBar);
             this.MenuBarAnimator.SetDecoration(this, BunifuAnimatorNS.DecorationType.None);
@@ -487,7 +509,7 @@ namespace MapMakingStudio
             this.panelSnippets.ResumeLayout(false);
             this.panelBearbeiten.ResumeLayout(false);
             this.panelDatei.ResumeLayout(false);
-            this.panelTabBar.ResumeLayout(false);
+            this.tabControl.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -501,9 +523,6 @@ namespace MapMakingStudio
         private Bunifu.Framework.UI.BunifuImageButton bMinimize;
         private System.Windows.Forms.Panel panelHeaderButtons;
         private System.Windows.Forms.Panel panelMenuBar;
-        private System.Windows.Forms.Panel panelTabBar;
-        private System.Windows.Forms.Button bTab1;
-        private System.Windows.Forms.Panel panelTabs;
         private BunifuFlatButton bSuchen;
         private BunifuFlatButton bEinstellungen;
         private BunifuFlatButton bSnippets;
@@ -515,6 +534,10 @@ namespace MapMakingStudio
         public System.Windows.Forms.Panel panelDatei;
         public BunifuFlatButton bDatei;
         public BunifuTransition MenuBarAnimator;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        public VisualStudioTabControl.VisualStudioTabControl tabControl;
     }
 }
 

@@ -137,27 +137,7 @@ namespace MapMakingStudio
             }
         }
 
-        private void bTab1_Click(object sender, EventArgs e)
-        {
-
-            Tabs.CodeTab ct = new Tabs.CodeTab();
-
-            ct.TopLevel = false;
-            ct.AutoScroll = true;
-
-
-            panelTabs.Controls.Add(ct);
-            ct.Dock = DockStyle.Fill;
-
-
-            ct.Show();
-
-
-
-
-        }
-
-        private void bBearbeiten_Click(object sender, EventArgs e)
+      private void bBearbeiten_Click(object sender, EventArgs e)
         {
 
             if (MenuBar.bearbeitenMenuIsOpen)
@@ -174,6 +154,11 @@ namespace MapMakingStudio
 
         }
 
+        private void bEinstellungen_Click(object sender, EventArgs e)
+        {
+            addTab();
+        }
+
 
         /// <summary>
         /// Passt das panelTab-Usercontrol auf die aktuelle Größe an.
@@ -182,9 +167,27 @@ namespace MapMakingStudio
         {
 
             int width = this.Size.Width - panelMenuBar.Width - 3;
-            int height = this.Size.Height - panelTabBar.Height - HeaderBar.Height - 3;
+            int height = this.Size.Height - HeaderBar.Height - 3;
 
-            panelTabs.Size = new Size(width, height);
+            tabControl.Size = new Size(width, height);
+        }
+
+        private void addTab()
+        {
+            Tabs.CodeTab ct = new Tabs.CodeTab()
+            {
+                TopLevel = false,
+                AutoScroll = true
+            };
+            //t.Controls.Add(ct);
+
+            ct.Dock = DockStyle.Fill;
+
+
+            ct.Show();
+
+
+      
         }
 
         private void bClose_Click(object sender, EventArgs e)
