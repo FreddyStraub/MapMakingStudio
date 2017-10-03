@@ -26,12 +26,17 @@ namespace MapMakingStudio
 
             closeAllTabs();
 
+            MMSFileExplorer.Path = FileExplorerPath;
+
         }
 
         public enum Menus { Datei, Bearbeiten, Snippets, Suche, Einstellungen };
         public enum MenuStatus { Open, Close };
 
         public MenuBar.MenuBar MenuBar;
+
+        string FileExplorerPath = "C:\\Users\\Freddy Straub\\AppData\\Roaming\\.minecraft\\saves";
+        
 
         #region Move Form
 
@@ -140,7 +145,7 @@ namespace MapMakingStudio
             }
         }
 
-      private void bBearbeiten_Click(object sender, EventArgs e)
+        private void bBearbeiten_Click(object sender, EventArgs e)
         {
 
             if (MenuBar.bearbeitenMenuIsOpen)
@@ -176,6 +181,7 @@ namespace MapMakingStudio
             tabControl.Size = new Size(width, height);
         }
 
+   
         private void addTab()
         {
             Tabs.CodeTab ct = new Tabs.CodeTab()
