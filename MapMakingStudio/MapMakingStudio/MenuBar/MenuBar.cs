@@ -45,6 +45,11 @@ namespace MapMakingStudio.MenuBar
             bearbeitenMenuIsOpen = false;
         }
 
+        /// <summary>
+        /// Verändert den Status eines Menus der MenuBar
+        /// </summary>
+        /// <param name="menu">Menu das verändert werden soll.</param>
+        /// <param name="menustatus">Zustand der auf das Menu angewendet werden soll</param>
         public void toggle(Menus menu, MenuStatus menustatus)
         {
 
@@ -172,7 +177,9 @@ namespace MapMakingStudio.MenuBar
 
         #endregion
 
-
+        /// <summary>
+        /// Schließt alle Menus der MenuBar
+        /// </summary>
         private void closeAllSubMenus()
         {
             if (dateiMenuIsOpen)             

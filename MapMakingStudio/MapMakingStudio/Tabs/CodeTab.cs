@@ -28,6 +28,7 @@ namespace MapMakingStudio.Tabs
 
             fastColoredTextBox1.Size = Size;
 
+
         }
 
 
@@ -79,7 +80,7 @@ namespace MapMakingStudio.Tabs
             //clear folding markers of changed range
             e.ChangedRange.ClearFoldingMarkers();
             //set folding markers
-            e.ChangedRange.SetFoldingMarkers(@"_region\b", @"_endregion\b");
+            e.ChangedRange.SetFoldingMarkers(@"#region\b", @"#endregion\b");
 
         }
     }
