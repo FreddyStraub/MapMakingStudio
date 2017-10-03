@@ -23,6 +23,9 @@ namespace MapMakingStudio
             generatePanelTabsSize();
 
             MenuBar = new MenuBar.MenuBar(this);
+
+            closeAllTabs();
+
         }
 
         public enum Menus { Datei, Bearbeiten, Snippets, Suche, Einstellungen };
@@ -156,7 +159,8 @@ namespace MapMakingStudio
 
         private void bEinstellungen_Click(object sender, EventArgs e)
         {
-            addTab();
+
+
         }
 
 
@@ -217,5 +221,18 @@ namespace MapMakingStudio
 
         }
 
+        /// <summary>
+        /// Schließt alle Tabs
+        /// </summary>
+        private void closeAllTabs()
+        {
+
+            foreach (TabPage t in tabControl.TabPages)
+            {
+                tabControl.TabPages.Remove(t);
+
+            }
+
+        }
     }
 }
