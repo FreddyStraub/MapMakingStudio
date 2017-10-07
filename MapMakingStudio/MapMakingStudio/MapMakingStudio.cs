@@ -26,16 +26,20 @@ namespace MapMakingStudio
 
             closeAllTabs();
 
-            MMSFileExplorer.Path = FileExplorerPath;
+            assignEvents();
+
+            fileExplorerControl1.Path = FileExplorerPath;
 
         }
+
+   
 
         public enum Menus { Datei, Bearbeiten, Snippets, Suche, Einstellungen };
         public enum MenuStatus { Open, Close };
 
         public MenuBar.MenuBar MenuBar;
 
-        string FileExplorerPath = "C:\\Users\\Freddy Straub\\AppData\\Roaming\\.minecraft\\saves";
+        string FileExplorerPath = "C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\.minecraft\\saves";
         
 
         #region Move Form
@@ -132,6 +136,8 @@ namespace MapMakingStudio
             }
         }
 
+        #region MenuBarClickEvents
+
         private void bDatei_Click(object sender, EventArgs e)
         {
             if (MenuBar.dateiMenuIsOpen)
@@ -144,7 +150,6 @@ namespace MapMakingStudio
 
             }
         }
-
         private void bBearbeiten_Click(object sender, EventArgs e)
         {
 
@@ -168,6 +173,7 @@ namespace MapMakingStudio
 
         }
 
+        #endregion
 
         /// <summary>
         /// Passt das panelTab-Usercontrol auf die aktuelle Größe an.
@@ -181,25 +187,8 @@ namespace MapMakingStudio
             tabControl.Size = new Size(width, height);
         }
 
-   
-        private void addTab()
-        {
-            Tabs.CodeTab ct = new Tabs.CodeTab()
-            {
-                TopLevel = false,
-                AutoScroll = true
-            };
-            //t.Controls.Add(ct);
 
-            ct.Dock = DockStyle.Fill;
-
-
-            ct.Show();
-
-
-      
-        }
-
+        
         private void bClose_Click(object sender, EventArgs e)
         {
             Close();
@@ -240,5 +229,28 @@ namespace MapMakingStudio
             }
 
         }
+
+      
+
+        private void assignEvents()
+        {
+            fileExplorerControl1.NodePathChanged += new EventHandler(fileExplorer1_NodePathChanged);
+
+
+        }
+
+
+        #region FileExplorerEvents
+
+        private void fileExplorer1_NodePathChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show(fileExplorerControl1.SelectedNodePath);
+        }
+
+
+
+        #endregion
+
     }
 }
+

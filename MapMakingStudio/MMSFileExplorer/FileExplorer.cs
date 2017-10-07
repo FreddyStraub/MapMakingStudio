@@ -6,12 +6,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MapMakingStudio.FileExplorer
+namespace MMSFileExplorer
 {
     public class FileExplorer
     {
-
-        string direpath;
+        public string direpath;
 
         /// <summary>
         /// Erstellt die Grundstruktur
@@ -85,6 +84,7 @@ namespace MapMakingStudio.FileExplorer
             return parentNode;
 
         }
+
 
     }
 }
