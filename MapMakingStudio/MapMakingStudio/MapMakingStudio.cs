@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MapMakingStudio.MenuBar;
+using MapMakingStudio.Tabs;
 
 namespace MapMakingStudio
 {
@@ -31,8 +32,7 @@ namespace MapMakingStudio
             fileExplorerControl1.Path = FileExplorerPath;
 
         }
-
-   
+          
 
         public enum Menus { Datei, Bearbeiten, Snippets, Suche, Einstellungen };
         public enum MenuStatus { Open, Close };
@@ -170,6 +170,9 @@ namespace MapMakingStudio
         private void bEinstellungen_Click(object sender, EventArgs e)
         {
 
+            TabPage sel = tabControl.SelectedTab;
+            CodeTabPage t = new CodeTabPage("");
+            t = t.getCodeTabPageFromTabPage(sel);
 
         }
 
@@ -193,6 +196,8 @@ namespace MapMakingStudio
         {
             Close();
         }
+
+       
         private void bMinimize_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
@@ -200,7 +205,6 @@ namespace MapMakingStudio
         private void bMaximize_Click(object sender, EventArgs e)
         {
             maximizeWindow(this);
-
         }
 
         private void panel1_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -231,20 +235,50 @@ namespace MapMakingStudio
         }
 
       
-
+        /// <summary>
+        /// Weißt die "externen" Events zu
+        /// </summary>
         private void assignEvents()
         {
+            //FileExplorer
             fileExplorerControl1.NodePathChanged += new EventHandler(fileExplorer1_NodePathChanged);
-
 
         }
 
+        //fileExplorerControl1.SelectedNodePath
+
+        /// <summary>
+        /// Öffnet Datei.
+        /// </summary>
+        /// <param name="Path">Pfad der Datei</param>
+        private void openFile(string Path)
+        {
+            if (System.IO.Path.GetExtension(Path) != "")
+            {
+                string tabPageName = System.IO.Path.GetFileName(Path);
+                CodeTabPage t = Tabs.Tabs.CreateNewCodeTabPage(tabPageName);
+
+                System.IO.StreamReader sr = new System.IO.StreamReader(Path);
+                string tcode = "";
+
+                tcode += sr.ReadToEnd();
+
+                sr.Close();
+
+                t.fasColoredTextBox.Text = tcode;
+
+                tabControl.TabPages.Add(t);
+                tabControl.SelectTab(tabControl.TabPages.IndexOf(t));
+
+            }
+        }
 
         #region FileExplorerEvents
 
         private void fileExplorer1_NodePathChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(fileExplorerControl1.SelectedNodePath);
+            openFile(fileExplorerControl1.SelectedNodePath);
+
         }
 
 

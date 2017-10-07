@@ -10,21 +10,10 @@ namespace MapMakingStudio.Tabs
     public class Tabs
     {
 
-        public static void CreateNewTab(VisualStudioTabControl.VisualStudioTabControl tabcontrol){
+        public static CodeTabPage CreateNewCodeTabPage(string title){
 
-            TabPage tnew = new TabPage("TEST");
-
-            CodeTab ct = new CodeTab();
-
-
-           ct.TopLevel = false;
-           ct.AutoScroll = true;     
-
-            tnew.Controls.Add(ct);
-            ct.Dock = DockStyle.Fill;
-            ct.Show();
-
-            tabcontrol.TabPages.Add(tnew);
+            CodeTabPage tnew = new CodeTabPage(title);
+            return tnew;
 
         }
 

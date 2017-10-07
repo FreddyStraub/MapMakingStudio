@@ -91,6 +91,9 @@
     <Compile Include="Tabs\CodeTab.Designer.cs">
       <DependentUpon>CodeTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tabs\CodeTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Tabs\Tabs.cs" />
     <EmbeddedResource Include="..\MMSFileExplorer\FileExplorerControl.resx">
       <Link>FileExplorerControl.resx</Link>

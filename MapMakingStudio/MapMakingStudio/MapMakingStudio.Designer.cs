@@ -32,7 +32,7 @@ namespace MapMakingStudio
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation27 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation7 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapMakingStudio));
             this.HeaderBar = new System.Windows.Forms.Panel();
             this.panelHeaderButtons = new System.Windows.Forms.Panel();
@@ -406,22 +406,22 @@ namespace MapMakingStudio
             // 
             this.MenuBarAnimator.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndHorizSlide;
             this.MenuBarAnimator.Cursor = null;
-            animation27.AnimateOnlyDifferences = true;
-            animation27.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation27.BlindCoeff")));
-            animation27.LeafCoeff = 0F;
-            animation27.MaxTime = 1F;
-            animation27.MinTime = 0F;
-            animation27.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation27.MosaicCoeff")));
-            animation27.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation27.MosaicShift")));
-            animation27.MosaicSize = 0;
-            animation27.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            animation27.RotateCoeff = 0F;
-            animation27.RotateLimit = 0F;
-            animation27.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation27.ScaleCoeff")));
-            animation27.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation27.SlideCoeff")));
-            animation27.TimeCoeff = 0F;
-            animation27.TransparencyCoeff = 0F;
-            this.MenuBarAnimator.DefaultAnimation = animation27;
+            animation7.AnimateOnlyDifferences = true;
+            animation7.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.BlindCoeff")));
+            animation7.LeafCoeff = 0F;
+            animation7.MaxTime = 1F;
+            animation7.MinTime = 0F;
+            animation7.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicCoeff")));
+            animation7.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation7.MosaicShift")));
+            animation7.MosaicSize = 0;
+            animation7.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            animation7.RotateCoeff = 0F;
+            animation7.RotateLimit = 0F;
+            animation7.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.ScaleCoeff")));
+            animation7.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation7.SlideCoeff")));
+            animation7.TimeCoeff = 0F;
+            animation7.TransparencyCoeff = 0F;
+            this.MenuBarAnimator.DefaultAnimation = animation7;
             this.MenuBarAnimator.Interval = 1000;
             this.MenuBarAnimator.TimeStep = 0.1F;
             // 
@@ -491,6 +491,7 @@ namespace MapMakingStudio
             this.fileExplorerControl1.Location = new System.Drawing.Point(200, 61);
             this.fileExplorerControl1.Name = "fileExplorerControl1";
             this.fileExplorerControl1.Path = "C:\\Users\\Freddy Straub\\Documents";
+            this.fileExplorerControl1.SelectedNodePath = null;
             this.fileExplorerControl1.Size = new System.Drawing.Size(213, 573);
             this.fileExplorerControl1.TabIndex = 10;
             // 
