@@ -255,21 +255,48 @@ namespace MapMakingStudio
         {
             if (System.IO.Path.GetExtension(Path) != "")
             {
-                string tabPageName = System.IO.Path.GetFileName(Path);
-                CodeTabPage t = Tabs.Tabs.CreateNewCodeTabPage(tabPageName);
+                bool fileOpened = false;
 
-                System.IO.StreamReader sr = new System.IO.StreamReader(Path);
-                string tcode = "";
+                foreach (TabPage tp in tabControl.TabPages)
+                {
+                    if (tp.Text == System.IO.Path.GetFileName(Path))
+                    {
+                        fileOpened = true;
+                    }
+              
+                }
 
-                tcode += sr.ReadToEnd();
+                if (fileOpened == false)
+                {
+                    //Wenn Datei noch nicht geöffnet
+                    string tabPageName = System.IO.Path.GetFileName(Path);
+                    CodeTabPage t = Tabs.Tabs.CreateNewCodeTabPage(tabPageName);
 
-                sr.Close();
+                    System.IO.StreamReader sr = new System.IO.StreamReader(Path);
+                    string tcode = "";
 
-                t.fasColoredTextBox.Text = tcode;
+                    tcode += sr.ReadToEnd();
 
-                tabControl.TabPages.Add(t);
-                tabControl.SelectTab(tabControl.TabPages.IndexOf(t));
+                    sr.Close();
 
+                    t.fasColoredTextBox.Text = tcode;
+
+                    tabControl.TabPages.Add(t);
+                    tabControl.SelectTab(tabControl.TabPages.IndexOf(t));
+                }
+                else
+                {
+                    //Wenn Datei geöffnet
+                    foreach (TabPage tp in tabControl.TabPages)
+                    {
+                        if (tp.Text == System.IO.Path.GetFileName(Path))
+                        {
+                            tabControl.SelectedTab = tp;
+                        }
+
+                    }
+
+                }
             }
         }
 
