@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace MMSFileExplorer
 {
@@ -30,6 +31,12 @@ namespace MMSFileExplorer
             {
                 TreeNode node = fe.EnumerateDirectory(e.Node);
             }
+        }
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            if (treeView1.SelectedNode != null)
+                SelectedNodePath = getFullPathFromNode(treeView1.SelectedNode);
+
         }
 
         private void FileExplorerControl_Load(object sender, EventArgs e)
@@ -82,12 +89,6 @@ namespace MMSFileExplorer
 
         #endregion
 
-        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
-        {
-            if (treeView1.SelectedNode != null)
-                SelectedNodePath = getFullPathFromNode(treeView1.SelectedNode);
-            
-        }
 
         /// <summary>
         /// Gibt den kompletten Dateipfad einer Node/Datei/Ordner zurück.
@@ -158,8 +159,7 @@ namespace MMSFileExplorer
             if (System.IO.Path.GetExtension(getFullPathFromNode(treeView1.SelectedNode)) != "")
             {
                 System.IO.File.Delete(getFullPathFromNode(node));
-
-  
+                  
                 TreeNode pNode = treeView1.SelectedNode;
 
                 pNode.Nodes.Remove(node);
@@ -177,9 +177,35 @@ namespace MMSFileExplorer
 
         }
 
+        /// <summary>
+        /// Öffnet Node in Explorer.
+        /// </summary>
+        /// <param name="node">Zu öffnende Node</param>
+        private void openInExplorer(TreeNode node)
+        {
+
+            string fullPath = getFullPathFromNode(node);
+            if (System.IO.Path.GetExtension(fullPath) == ""){
+
+                Process.Start(fullPath);
+            }
+            else
+            {
+
+                string direPath = fullPath.Substring(0, fullPath.Length - treeView1.SelectedNode.Text.Length);
+                Process.Start(direPath);
+
+            }
+
+        }
+
         private void löschenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             deleteNode(treeView1.SelectedNode);
+        }
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            openInExplorer(treeView1.SelectedNode);
         }
     }
 }

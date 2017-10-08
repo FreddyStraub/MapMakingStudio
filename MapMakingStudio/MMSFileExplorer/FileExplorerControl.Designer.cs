@@ -33,10 +33,11 @@
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dateiErstellenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordnerErstellenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.löschenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,12 +64,13 @@
             this.contextMenuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dateiErstellenToolStripMenuItem,
+            this.ordnerErstellenToolStripMenuItem,
             this.toolStripMenuItem1,
             this.toolStripSeparator1,
             this.löschenToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(168, 98);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(168, 120);
             // 
             // dateiErstellenToolStripMenuItem
             // 
@@ -78,6 +80,28 @@
             this.dateiErstellenToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.dateiErstellenToolStripMenuItem.Text = "Datei erstellen...";
             this.dateiErstellenToolStripMenuItem.Click += new System.EventHandler(this.dateiErstellenToolStripMenuItem_Click);
+            // 
+            // ordnerErstellenToolStripMenuItem
+            // 
+            this.ordnerErstellenToolStripMenuItem.ForeColor = System.Drawing.Color.White;
+            this.ordnerErstellenToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ordnerErstellenToolStripMenuItem.Image")));
+            this.ordnerErstellenToolStripMenuItem.Name = "ordnerErstellenToolStripMenuItem";
+            this.ordnerErstellenToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.ordnerErstellenToolStripMenuItem.Text = "Ordner erstellen...";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.White;
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
+            this.toolStripMenuItem1.Text = "In Explorer öffnen";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(164, 6);
             // 
             // löschenToolStripMenuItem
             // 
@@ -95,19 +119,6 @@
             this.imageList1.Images.SetKeyName(0, "ic_folder_open_white_24dp_1x.png");
             this.imageList1.Images.SetKeyName(1, "ic_folder_open_white_24dp_1x.png");
             this.imageList1.Images.SetKeyName(2, "ic_mode_edit_white_24dp_1x.png");
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(164, 6);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.White;
-            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
-            this.toolStripMenuItem1.Text = "In Explorer öffnen";
             // 
             // FileExplorerControl
             // 
@@ -131,5 +142,6 @@
         private System.Windows.Forms.ToolStripMenuItem löschenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem ordnerErstellenToolStripMenuItem;
     }
 }
