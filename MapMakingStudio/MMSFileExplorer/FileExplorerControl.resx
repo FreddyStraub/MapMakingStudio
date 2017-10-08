@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>127, 17</value>
+  </metadata>
   <metadata name="imageList1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
@@ -125,7 +128,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC6
-        AwAAAk1TRnQBSQFMAgEBAwEAATgBAAE4AQABGAEAARgBAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAFg
+        AwAAAk1TRnQBSQFMAgEBAwEAAVABAAFQAQABGAEAARgBAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAFg
         AwABGAMAAQEBAAEYBgABG/8A/wD/AP8ADwAJ/wP+A/Z+AAP2A/sw/wP7A/YMAAP2A/sw/wP7A/YPAAz/
         A/4D9nsAA/s2/wP7DAAD+zb/A/sPAA//A/4D9ngABv8wAAb/DAAG/zAABv8PAAP+D/8D/gP2dQAG/zAA
         Bv8MAAb/MAAG/w8AA/YD/g//A/4D9nIABv8wAAb/DAAG/zAABv8SAAP2A/4P/wP+A/ZvAAb/MAAG/wwA

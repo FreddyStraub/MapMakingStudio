@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\MapMakingStudio\bin\Debug\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,10 +55,19 @@
     <Compile Include="FileExplorerControl.Designer.cs">
       <DependentUpon>FileExplorerControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInputDialog.Designer.cs">
+      <DependentUpon>frmInputDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FileExplorerControl.resx">
       <DependentUpon>FileExplorerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInputDialog.resx">
+      <DependentUpon>frmInputDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
