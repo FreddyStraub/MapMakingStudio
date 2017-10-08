@@ -127,6 +127,10 @@ namespace MMSFileExplorer
             }
         }
 
+        /// <summary>
+        /// Erstelle eine Datei und fügt sie dem FileExplorer hinzu.
+        /// </summary>
+        /// <param name="path">Pfad der Datei</param>
         private void createFile(string path)
         {
             System.IO.StreamWriter fs = new System.IO.StreamWriter(path);
@@ -143,6 +147,39 @@ namespace MMSFileExplorer
             pNode.Nodes.Add(node);
 
             MessageBox.Show(treeView1.SelectedNode.FullPath);
+        }
+
+        /// <summary>
+        /// Delte Funktion für Nodes in FileExplorer
+        /// </summary>
+        /// <param name="node">zu Löschende Node</param>
+        private void deleteNode(TreeNode node)
+        {
+            if (System.IO.Path.GetExtension(getFullPathFromNode(treeView1.SelectedNode)) != "")
+            {
+                System.IO.File.Delete(getFullPathFromNode(node));
+
+  
+                TreeNode pNode = treeView1.SelectedNode;
+
+                pNode.Nodes.Remove(node);
+            }
+            else
+            {
+                System.IO.Directory.Delete(getFullPathFromNode(node));
+
+
+                TreeNode pNode = treeView1.SelectedNode;
+
+                pNode.Nodes.Remove(node);
+
+            }
+
+        }
+
+        private void löschenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            deleteNode(treeView1.SelectedNode);
         }
     }
 }
