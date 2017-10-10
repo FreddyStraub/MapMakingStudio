@@ -114,9 +114,11 @@
             // 
             // frmInputDialog
             // 
+            this.AcceptButton = this.bErstellen;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.CancelButton = this.bAbbrechen;
             this.ClientSize = new System.Drawing.Size(437, 245);
             this.Controls.Add(this.tbName);
             this.Controls.Add(this.bErstellen);
@@ -125,7 +127,9 @@
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInputDialog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmInputDialog";
+            this.Load += new System.EventHandler(this.frmInputDialog_Load);
             this.HeaderBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bClose)).EndInit();
             this.ResumeLayout(false);

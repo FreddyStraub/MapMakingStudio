@@ -21,6 +21,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -64,6 +66,12 @@
       <Link>FileExplorerControl.designer.cs</Link>
       <DependentUpon>FileExplorerControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInfoBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmInfoBox.Designer.cs">
+      <DependentUpon>frmInfoBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="MapMakingStudio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +106,9 @@
     <EmbeddedResource Include="..\MMSFileExplorer\FileExplorerControl.resx">
       <Link>FileExplorerControl.resx</Link>
       <DependentUpon>FileExplorerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfoBox.resx">
+      <DependentUpon>frmInfoBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MapMakingStudio.resx">
       <DependentUpon>MapMakingStudio.cs</DependentUpon>

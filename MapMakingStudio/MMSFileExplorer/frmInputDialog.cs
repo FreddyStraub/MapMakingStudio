@@ -61,5 +61,10 @@ namespace MMSFileExplorer
         {
             InputText = tbName.Text;
         }
+
+        private void frmInputDialog_Load(object sender, EventArgs e)
+        {
+            tbName.Select();
+        }
     }
 }

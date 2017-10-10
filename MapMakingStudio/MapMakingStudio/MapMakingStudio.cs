@@ -27,15 +27,21 @@ namespace MapMakingStudio
 
             closeAllTabs();
 
+
             assignEvents();
 
-            fileExplorerControl1.Path = FileExplorerPath;
+            FileExplorerControl1.Path = FileExplorerPath;
+
+            Controls.Add(infoBox);
+
 
         }
-          
+
 
         public enum Menus { Datei, Bearbeiten, Snippets, Suche, Einstellungen };
         public enum MenuStatus { Open, Close };
+
+        public frmInfoBox infoBox = new frmInfoBox("", "","");
 
         public MenuBar.MenuBar MenuBar;
 
@@ -170,11 +176,9 @@ namespace MapMakingStudio
         private void bEinstellungen_Click(object sender, EventArgs e)
         {
 
-            TabPage sel = tabControl.SelectedTab;
-            CodeTabPage t = new CodeTabPage("");
-            t = t.getCodeTabPageFromTabPage(sel);
 
         }
+
 
         #endregion
 
@@ -189,9 +193,8 @@ namespace MapMakingStudio
 
             tabControl.Size = new Size(width, height);
         }
+       
 
-
-        
         private void bClose_Click(object sender, EventArgs e)
         {
             Close();
@@ -211,6 +214,7 @@ namespace MapMakingStudio
         {
             maximizeWindow(this);
         }
+
         private void MapMakingStudio_Resize(object sender, EventArgs e)
         {
             generatePanelTabsSize();
@@ -218,6 +222,11 @@ namespace MapMakingStudio
             if (WindowState == FormWindowState.Normal)
                 bMaximize.Image = Properties.Resources.maximizeIcon;
 
+        }
+
+        private void mainTimer_Tick(object sender, EventArgs e)
+        {
+            setInfoBoxPosition();
         }
 
         /// <summary>
@@ -241,11 +250,11 @@ namespace MapMakingStudio
         private void assignEvents()
         {
             //FileExplorer
-            fileExplorerControl1.NodePathChanged += new EventHandler(fileExplorer1_NodePathChanged);
+            FileExplorerControl1.NodePathChanged += new EventHandler(fileExplorer1_NodePathChanged);
+            FileExplorerControl1.NodeHoverPathChanged += new EventHandler(fileExplorer1_HoverPathChanged);
 
         }
 
-        //fileExplorerControl1.SelectedNodePath
 
         /// <summary>
         /// Öffnet Datei.
@@ -304,13 +313,80 @@ namespace MapMakingStudio
 
         private void fileExplorer1_NodePathChanged(object sender, EventArgs e)
         {
-            openFile(fileExplorerControl1.SelectedNodePath);
+            string filePath = FileExplorerControl1.SelectedNodePath;
+            string fileExtention = System.IO.Path.GetExtension(filePath);
+
+            openFile(filePath);
+        }
+
+        private void fileExplorer1_HoverPathChanged(object sender, EventArgs e)
+        {
+            string fullPath = FileExplorerControl1.NodeHoverPath;
+            string fileExtention = System.IO.Path.GetExtension(fullPath);
+
+            
+
+            if (fileExtention.ToLower() == ".png" || fileExtention.ToLower() == ".jpg")
+            {
+                displayTexture(fullPath);
+                
+
+            }
+            else
+            {
+                if(infoBox != null)
+                    infoBox.Hide();
+            }
+        }
+        
+
+        #endregion
+
+        /// <summary>
+        /// Zeigt eine Textur in der textureBox an.
+        /// </summary>
+        /// <param name="filePath">Pfad zu Datei.</param>
+        private void displayTexture(string filePath)
+        {
+            string fileName = System.IO.Path.GetFileName(filePath);
+
+            displayInfo(filePath, fileName, filePath);
+   
+        }
+
+        /// <summary>
+        /// Zeigt eine Info im Info-Bereich.
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="titel"></param>
+        /// <param name="pic"></param>
+        private void displayInfo(string info, string titel, string pic)
+        {
+
+            infoBox = new frmInfoBox(titel, info, pic);
+
+            
+            Controls.Add(infoBox);
+
+            setInfoBoxPosition();
+
+            infoBox.BringToFront();
+
+
+            infoBox.Show();
+
 
         }
 
+        /// <summary>
+        /// Ändert die Position der Infobox und passt sie an die Fenstergröße an.
+        /// </summary>
+        private void setInfoBoxPosition()
+        {
+            Point position = new Point(this.Width - infoBox.Width - 20, panelHeaderButtons.Height + 40);
+            infoBox.Location = position;
 
-
-        #endregion
+        }
 
     }
 }

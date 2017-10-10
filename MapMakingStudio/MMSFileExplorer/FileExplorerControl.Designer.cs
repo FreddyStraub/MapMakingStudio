@@ -51,13 +51,17 @@
             this.treeView1.ForeColor = System.Drawing.Color.White;
             this.treeView1.ImageIndex = 0;
             this.treeView1.ImageList = this.imageList1;
+            this.treeView1.LineColor = System.Drawing.Color.White;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
             this.treeView1.SelectedImageIndex = 0;
+            this.treeView1.ShowRootLines = false;
             this.treeView1.Size = new System.Drawing.Size(252, 523);
             this.treeView1.TabIndex = 0;
             this.treeView1.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeView1_BeforeExpand);
+            this.treeView1.NodeMouseHover += new System.Windows.Forms.TreeNodeMouseHoverEventHandler(this.treeView1_NodeMouseHover);
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
             // 
             // contextMenuStrip1
             // 
@@ -88,6 +92,7 @@
             this.ordnerErstellenToolStripMenuItem.Name = "ordnerErstellenToolStripMenuItem";
             this.ordnerErstellenToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.ordnerErstellenToolStripMenuItem.Text = "Ordner erstellen...";
+            this.ordnerErstellenToolStripMenuItem.Click += new System.EventHandler(this.ordnerErstellenToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 

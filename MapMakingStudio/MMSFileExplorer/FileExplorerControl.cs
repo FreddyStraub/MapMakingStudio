@@ -18,6 +18,7 @@ namespace MMSFileExplorer
             InitializeComponent();
             Path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
+
         }
 
 
@@ -86,6 +87,44 @@ namespace MMSFileExplorer
 
 
         #endregion
+        #region NodeHoverPathChanged
+
+        // declare the event
+        public event EventHandler NodeHoverPathChanged;
+
+        // declare backing field for the property
+        private string _hovernodepath;
+
+        public string NodeHoverPath
+        {
+            get { return _hovernodepath; }
+            set
+            {
+                // bool indicating whether the new value is indeed 
+                // different from the old one
+                bool raiseEvent = _hovernodepath != value;
+                // assign the value to the backing field
+                _hovernodepath = value;
+                // raise the event if the value has changed
+                if (raiseEvent)
+                {
+                    OnHoverNodePathChanged(EventArgs.Empty);
+                }
+            }
+        }
+
+        protected virtual void OnHoverNodePathChanged(EventArgs e)
+        {
+            EventHandler temp = this.NodeHoverPathChanged;
+            // make sure that there is an event handler attached
+            if (temp != null)
+            {
+                temp(this, e);
+            }
+        }
+
+
+        #endregion
 
         #endregion
 
@@ -106,30 +145,8 @@ namespace MMSFileExplorer
         }
               
 
-        private void dateiErstellenToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            frmInputDialog frmID = new frmInputDialog();
-
-            if (frmID.ShowDialog() == DialogResult.OK)
-            {
-                if (System.IO.Path.GetExtension(getFullPathFromNode(treeView1.SelectedNode)) == "")
-                {
-                   createFile(getFullPathFromNode(treeView1.SelectedNode) + "\\" +frmID.InputText);
-                }
-                else
-                {
-                    string fullPath = getFullPathFromNode(treeView1.SelectedNode);
-                    string direPath = fullPath.Substring(0, fullPath.Length - treeView1.SelectedNode.Text.Length);
-
-                    createFile(direPath + "\\" + frmID.InputText);
-
-                }
-            }
-        }
-
         /// <summary>
-        /// Erstelle eine Datei und fügt sie dem FileExplorer hinzu.
+        /// Erstellt eine Datei und fügt sie dem FileExplorer hinzu.
         /// </summary>
         /// <param name="path">Pfad der Datei</param>
         private void createFile(string path)
@@ -151,28 +168,60 @@ namespace MMSFileExplorer
         }
 
         /// <summary>
+        /// Erstellt einen Ordner und fügt sie dem FileExplorer hinzu.
+        /// </summary>
+        /// <param name="path">Pfad des Ordners</param>
+        private void createDirectory(string path)
+        {
+            System.IO.Directory.CreateDirectory(path);
+
+            TreeNode node = new TreeNode();
+            node.Text = System.IO.Path.GetFileName(path);
+            node.Nodes.Add("");
+
+            TreeNode pNode = treeView1.SelectedNode;
+
+            pNode.Nodes.Add(node);
+
+        }
+
+        /// <summary>
         /// Delte Funktion für Nodes in FileExplorer
         /// </summary>
         /// <param name="node">zu Löschende Node</param>
         private void deleteNode(TreeNode node)
         {
+
+
             if (System.IO.Path.GetExtension(getFullPathFromNode(treeView1.SelectedNode)) != "")
             {
-                System.IO.File.Delete(getFullPathFromNode(node));
-                  
-                TreeNode pNode = treeView1.SelectedNode;
 
-                pNode.Nodes.Remove(node);
+                DialogResult deleteFileResult = MessageBox.Show("Willst du die Datei: " + node.Text + " wirklich löschen?", "MapMakingStudio", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (deleteFileResult == DialogResult.Yes)
+                {
+                    
+                    System.IO.File.Delete(getFullPathFromNode(node));
+
+                    TreeNode pNode = treeView1.SelectedNode;
+
+                    pNode.Nodes.Remove(node);
+
+                }
             }
             else
             {
-                System.IO.Directory.Delete(getFullPathFromNode(node));
 
 
-                TreeNode pNode = treeView1.SelectedNode;
+                DialogResult deleteDireResult = MessageBox.Show("Willst du den Ordner: " + node.Text + " wirklich löschen?", "MapMakingStudio", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (deleteDireResult == DialogResult.Yes)
+                {
 
-                pNode.Nodes.Remove(node);
+                    System.IO.Directory.Delete(getFullPathFromNode(node), true);
 
+                    TreeNode pNode = treeView1.SelectedNode;
+
+                    pNode.Nodes.Remove(node);
+                }
             }
 
         }
@@ -199,6 +248,17 @@ namespace MMSFileExplorer
 
         }
 
+
+        private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right) treeView1.SelectedNode = e.Node;
+        }
+        private void treeView1_NodeMouseHover(object sender, TreeNodeMouseHoverEventArgs e)
+        {
+            NodeHoverPath = getFullPathFromNode(e.Node);
+        }
+
+
         private void löschenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             deleteNode(treeView1.SelectedNode);
@@ -207,5 +267,47 @@ namespace MMSFileExplorer
         {
             openInExplorer(treeView1.SelectedNode);
         }
+        private void dateiErstellenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            frmInputDialog frmID = new frmInputDialog();
+
+            if (frmID.ShowDialog() == DialogResult.OK)
+            {
+                if (System.IO.Path.GetExtension(getFullPathFromNode(treeView1.SelectedNode)) == "")
+                {
+                    createFile(getFullPathFromNode(treeView1.SelectedNode) + "\\" + frmID.InputText);
+                }
+                else
+                {
+                    string fullPath = getFullPathFromNode(treeView1.SelectedNode);
+                    string direPath = fullPath.Substring(0, fullPath.Length - treeView1.SelectedNode.Text.Length);
+
+                    createFile(direPath + "\\" + frmID.InputText);
+
+                }
+            }
+        }
+        private void ordnerErstellenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInputDialog frmID = new frmInputDialog();
+
+            if (frmID.ShowDialog() == DialogResult.OK)
+            {
+                if (System.IO.Path.GetExtension(getFullPathFromNode(treeView1.SelectedNode)) == "")
+                {
+                    createDirectory(getFullPathFromNode(treeView1.SelectedNode) + "\\" + frmID.InputText);
+                }
+                else
+                {
+                    string fullPath = getFullPathFromNode(treeView1.SelectedNode);
+                    string direPath = fullPath.Substring(0, fullPath.Length - treeView1.SelectedNode.Text.Length);
+
+                    createDirectory(direPath + "\\" + frmID.InputText);
+
+                }
+            }
+        }
+
     }
 }
