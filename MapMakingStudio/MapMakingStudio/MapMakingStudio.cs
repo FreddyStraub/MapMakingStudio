@@ -27,7 +27,7 @@ namespace MapMakingStudio
 
             closeAllTabs();
 
-
+            loadSettings();
             assignEvents();
 
             FileExplorerControl1.Path = FileExplorerPath;
@@ -37,6 +37,36 @@ namespace MapMakingStudio
 
         }
 
+        /// <summary>
+        /// Lädt UserSettings.
+        /// </summary>
+        private void loadSettings()
+        {
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+            Settings = new Settings();
+
+            if (!System.IO.Directory.Exists(appDataPath + "\\MapMakingStudio"))
+                System.IO.Directory.CreateDirectory(appDataPath + "\\MapMakingStudio");
+
+            if (System.IO.File.Exists(appDataPath + "\\MapMakingStudio\\Settings.wolf"))
+            {
+                Settings = Settings.Load( appDataPath + "\\MapMakingStudio\\Settings.wolf");
+
+            }
+            else
+            {
+
+                Settings newSettings = new Settings();
+                newSettings.setStandartSettings();
+                newSettings.Save(appDataPath + "\\MapMakingStudio\\Settings.wolf");
+
+                Settings = Settings.Load(appDataPath + "\\MapMakingStudio\\Settings.wolf");
+            }
+
+            FileExplorerPath = Settings.fileExplorerPath;
+
+        }
 
         public enum Menus { Datei, Bearbeiten, Snippets, Suche, Einstellungen };
         public enum MenuStatus { Open, Close };
@@ -45,8 +75,9 @@ namespace MapMakingStudio
 
         public MenuBar.MenuBar MenuBar;
 
-        string FileExplorerPath = "C:\\Users\\" + Environment.UserName + "\\AppData\\Roaming\\.minecraft\\saves";
-        
+        string FileExplorerPath;
+
+        public Settings Settings { get; set; }
 
         #region Move Form
 
@@ -175,8 +206,7 @@ namespace MapMakingStudio
 
         private void bEinstellungen_Click(object sender, EventArgs e)
         {
-
-
+            
         }
 
 
