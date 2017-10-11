@@ -280,10 +280,10 @@ namespace MapMakingStudio
         private void assignEvents()
         {
             //FileExplorer
-            FileExplorerControl1.NodePathChanged += new EventHandler(fileExplorer1_NodePathChanged);
             FileExplorerControl1.NodeHoverPathChanged += new EventHandler(fileExplorer1_HoverPathChanged);
-
+            FileExplorerControl1.contextMenuStrip1.Items["öffnenToolStripMenuItem"].Click += new EventHandler(fileExplorer1_openClickEvent);
         }
+
 
 
         /// <summary>
@@ -341,14 +341,6 @@ namespace MapMakingStudio
 
         #region FileExplorerEvents
 
-        private void fileExplorer1_NodePathChanged(object sender, EventArgs e)
-        {
-            string filePath = FileExplorerControl1.SelectedNodePath;
-            string fileExtention = System.IO.Path.GetExtension(filePath);
-
-            openFile(filePath);
-        }
-
         private void fileExplorer1_HoverPathChanged(object sender, EventArgs e)
         {
             string fullPath = FileExplorerControl1.NodeHoverPath;
@@ -368,7 +360,14 @@ namespace MapMakingStudio
                     infoBox.Hide();
             }
         }
-        
+        private void fileExplorer1_openClickEvent(object sender, EventArgs e)
+        {
+            string filePath = FileExplorerControl1.SelectedNodePath;
+            string fileExtention = System.IO.Path.GetExtension(filePath);
+
+            openFile(filePath);
+        }
+
 
         #endregion
 
