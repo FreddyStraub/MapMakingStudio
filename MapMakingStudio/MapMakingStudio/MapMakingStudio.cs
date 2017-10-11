@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MapMakingStudio.MenuBar;
 using MapMakingStudio.Tabs;
+using System.Diagnostics;
 
 namespace MapMakingStudio
 {
@@ -345,7 +346,6 @@ namespace MapMakingStudio
         {
             string fullPath = FileExplorerControl1.NodeHoverPath;
             string fileExtention = System.IO.Path.GetExtension(fullPath);
-
             
 
             if (fileExtention.ToLower() == ".png" || fileExtention.ToLower() == ".jpg")
@@ -379,10 +379,14 @@ namespace MapMakingStudio
         {
             string fileName = System.IO.Path.GetFileName(filePath);
 
-            displayInfo(filePath, fileName, filePath);
+            Action openTexture = () =>
+            {
+                Process.Start(filePath);
+            };
+
+            displayInfoWithClick(filePath, fileName, filePath, frmInfoBox.ClickEvents.Pic, openTexture);
    
         }
-
         /// <summary>
         /// Zeigt eine Info im Info-Bereich.
         /// </summary>
@@ -393,8 +397,7 @@ namespace MapMakingStudio
         {
 
             infoBox = new frmInfoBox(titel, info, pic);
-
-            
+                        
             Controls.Add(infoBox);
 
             setInfoBoxPosition();
@@ -402,6 +405,22 @@ namespace MapMakingStudio
             infoBox.BringToFront();
 
 
+            infoBox.Show();
+
+
+        }
+
+        private void displayInfoWithClick(string info, string titel, string pic, frmInfoBox.ClickEvents clickEvent, Action ev)
+        {
+
+            infoBox = new frmInfoBox(titel, info, pic, ev, clickEvent);
+
+            Controls.Add(infoBox);
+
+            setInfoBoxPosition();
+
+            infoBox.BringToFront();
+            
             infoBox.Show();
 
 

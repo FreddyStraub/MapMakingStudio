@@ -18,6 +18,11 @@ namespace MapMakingStudio
 
         public Bitmap InfoPic { get; set; }
 
+        Action actionTitel = null;
+        Action actionInfo = null;
+        Action actionPic = null;
+
+        public enum ClickEvents { Titel, Info, Pic}
 
         /// <summary>
         /// Konstruktor für eine InfoBox mit Titel, Info und einem Pfad zu einer Bilddatei.
@@ -43,6 +48,32 @@ namespace MapMakingStudio
             setSettings(titel, info, pic);
 
         }
+
+        public frmInfoBox(string titel, string info, string picPath, Action ac, ClickEvents evclick)
+        {
+            InitializeComponent();
+
+            Bitmap pic;
+
+            try
+            {
+                pic = new Bitmap(picPath);
+            }
+            catch{ pic = null; }
+
+            setSettings(titel, info, pic);
+                      
+
+            switch (evclick)
+            {
+                case ClickEvents.Info: { actionInfo = ac; break; }
+                case ClickEvents.Pic: { actionPic = ac; pictureBox1.Cursor = Cursors.Hand; break; }
+                case ClickEvents.Titel: { actionTitel = ac; break; }
+
+            }
+
+        }
+
 
         /// <summary>
         /// Konstruktor für eine InfoBox mit Titel, Info und einer Bitmap
@@ -84,5 +115,21 @@ namespace MapMakingStudio
 
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (actionPic != null)
+                actionPic();
+        }
+        private void lbTitel_Click(object sender, EventArgs e)
+        {
+            if (actionTitel != null)
+                actionTitel();
+        }
+        private void rtbInfoText_Click(object sender, EventArgs e)
+        {
+            if (actionInfo != null)
+                actionInfo();
+
+        }
     }
 }

@@ -43,6 +43,7 @@
             this.lbTitel.Size = new System.Drawing.Size(52, 30);
             this.lbTitel.TabIndex = 1;
             this.lbTitel.Text = "Titel";
+            this.lbTitel.Click += new System.EventHandler(this.lbTitel_Click);
             // 
             // rtbInfoText
             // 
@@ -56,6 +57,7 @@
             this.rtbInfoText.Size = new System.Drawing.Size(363, 100);
             this.rtbInfoText.TabIndex = 2;
             this.rtbInfoText.Text = "";
+            this.rtbInfoText.Click += new System.EventHandler(this.rtbInfoText_Click);
             // 
             // pictureBox1
             // 
@@ -66,6 +68,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // frmInfoBox
             // 
