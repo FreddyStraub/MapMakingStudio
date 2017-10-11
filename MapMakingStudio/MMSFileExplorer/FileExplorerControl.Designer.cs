@@ -133,7 +133,6 @@
             this.Controls.Add(this.treeView1);
             this.Name = "FileExplorerControl";
             this.Size = new System.Drawing.Size(252, 523);
-            this.Load += new System.EventHandler(this.FileExplorerControl_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 

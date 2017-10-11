@@ -18,11 +18,20 @@ namespace MMSFileExplorer
             InitializeComponent();
             Path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
+            PathChanged += new EventHandler(this_pathChanged);
+
+        }
+
+        private void this_pathChanged(object sender, EventArgs e)
+        {
+
+            treeView1.Nodes.Clear();
+            fe.CreateTree(this.treeView1, Path);
 
         }
 
 
-        public string Path { get; set; }
+        //  public string Path { get; set; }
 
         FileExplorer fe = new FileExplorer();
 
@@ -37,12 +46,6 @@ namespace MMSFileExplorer
         {
             if (treeView1.SelectedNode != null)
                 SelectedNodePath = getFullPathFromNode(treeView1.SelectedNode);
-
-        }
-
-        private void FileExplorerControl_Load(object sender, EventArgs e)
-        {
-            fe.CreateTree(this.treeView1, Path);
 
         }
 
@@ -125,6 +128,45 @@ namespace MMSFileExplorer
 
 
         #endregion
+        #region PathChanged
+
+        // declare the event
+        public event EventHandler PathChanged;
+
+        // declare backing field for the property
+        private string _path;
+
+        public string Path
+        {
+            get { return _path; }
+            set
+            {
+                // bool indicating whether the new value is indeed 
+                // different from the old one
+                bool raiseEvent = _path != value;
+                // assign the value to the backing field
+                _path = value;
+                // raise the event if the value has changed
+                if (raiseEvent)
+                {
+                    OnPathChanged(EventArgs.Empty);
+                }
+            }
+        }
+
+        protected virtual void OnPathChanged(EventArgs e)
+        {
+            EventHandler temp = this.PathChanged;
+            // make sure that there is an event handler attached
+            if (temp != null)
+            {
+                temp(this, e);
+            }
+        }
+
+
+        #endregion
+
 
         #endregion
 

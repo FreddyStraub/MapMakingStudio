@@ -206,7 +206,7 @@ namespace MapMakingStudio
 
         private void bEinstellungen_Click(object sender, EventArgs e)
         {
-            
+            FileExplorerControl1.Path = "C:\\Users\\Freddy Straub\\AppData\\Roaming";
         }
 
 
