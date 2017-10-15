@@ -58,6 +58,8 @@ namespace MapMakingStudio
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.mainTimer = new System.Windows.Forms.Timer(this.components);
+            this.MaximaizeAnimation = new System.Windows.Forms.Timer(this.components);
+            this.MinimaizeAnimation = new System.Windows.Forms.Timer(this.components);
             this.FileExplorerControl1 = new MMSFileExplorer.FileExplorerControl();
             this.HeaderBar.SuspendLayout();
             this.panelHeaderButtons.SuspendLayout();
@@ -491,6 +493,16 @@ namespace MapMakingStudio
             this.mainTimer.Interval = 1;
             this.mainTimer.Tick += new System.EventHandler(this.mainTimer_Tick);
             // 
+            // MaximaizeAnimation
+            // 
+            this.MaximaizeAnimation.Interval = 10;
+            this.MaximaizeAnimation.Tick += new System.EventHandler(this.MaximaizeAnimation_Tick);
+            // 
+            // MinimaizeAnimation
+            // 
+            this.MinimaizeAnimation.Interval = 10;
+            this.MinimaizeAnimation.Tick += new System.EventHandler(this.MinimaizeAnimation_Tick);
+            // 
             // FileExplorerControl1
             // 
             this.FileExplorerControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
@@ -520,6 +532,8 @@ namespace MapMakingStudio
             this.Name = "MapMakingStudio";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MapMakingStudio";
+            this.Activated += new System.EventHandler(this.MapMakingStudio_Activated);
+            this.Load += new System.EventHandler(this.MapMakingStudio_Load);
             this.Resize += new System.EventHandler(this.MapMakingStudio_Resize);
             this.HeaderBar.ResumeLayout(false);
             this.HeaderBar.PerformLayout();
@@ -564,6 +578,8 @@ namespace MapMakingStudio
         public VisualStudioTabControl.VisualStudioTabControl tabControl;
         private FileExplorerControl FileExplorerControl1;
         private System.Windows.Forms.Timer mainTimer;
+        private System.Windows.Forms.Timer MaximaizeAnimation;
+        private System.Windows.Forms.Timer MinimaizeAnimation;
     }
 }
 

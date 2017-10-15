@@ -49,6 +49,14 @@ namespace MapMakingStudio
 
         }
 
+        /// <summary>
+        /// Konstruktor für eine InfoBox mit Titel, Info, einem Pfad zu einer Bilddatei sowie Möglichkeit ein Clickevent zu übergeben.
+        /// </summary>
+        /// <param name="titel">Titel</param>
+        /// <param name="info">Infotext</param>
+        /// <param name="picPath">Pfad zur Bilddatei</param>
+        /// <param name="ac">Methode die ausgeführt werden soll</param>
+        /// <param name="evclick">Control das Methode ausführen soll.</param>
         public frmInfoBox(string titel, string info, string picPath, Action ac, ClickEvents evclick)
         {
             InitializeComponent();
@@ -66,9 +74,9 @@ namespace MapMakingStudio
 
             switch (evclick)
             {
-                case ClickEvents.Info: { actionInfo = ac; break; }
+                case ClickEvents.Info: { actionInfo = ac; rtbInfoText.Cursor = Cursors.Hand; break; }
                 case ClickEvents.Pic: { actionPic = ac; pictureBox1.Cursor = Cursors.Hand; break; }
-                case ClickEvents.Titel: { actionTitel = ac; break; }
+                case ClickEvents.Titel: { actionTitel = ac; lbTitel.Cursor = Cursors.Hand; break; }
 
             }
 
@@ -131,5 +139,6 @@ namespace MapMakingStudio
                 actionInfo();
 
         }
+
     }
 }

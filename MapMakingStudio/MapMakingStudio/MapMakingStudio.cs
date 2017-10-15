@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MapMakingStudio.MenuBar;
 using MapMakingStudio.Tabs;
 using System.Diagnostics;
+using System.Threading;
 
 namespace MapMakingStudio
 {
@@ -155,6 +156,54 @@ namespace MapMakingStudio
 
         #endregion
 
+        #region general Animations
+
+        /// <summary>
+        /// Minimaize Animation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MinimaizeAnimation_Tick(object sender, EventArgs e)
+        {
+            Opacity = Opacity - 0.1;
+
+            if (Opacity == 0)
+            {
+                MinimaizeAnimation.Stop();
+                WindowState = FormWindowState.Minimized;
+
+            }
+        }
+
+        /// <summary>
+        /// Maximaize Animation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MaximaizeAnimation_Tick(object sender, EventArgs e)
+        {
+
+            WindowState = FormWindowState.Normal;
+            
+
+            if (Opacity == 1)
+            {
+                MaximaizeAnimation.Stop();
+
+            }
+            else
+            {
+                Opacity = Opacity + 0.1;
+
+            }
+
+        }
+
+
+
+        #endregion
+
+
         /// <summary>
         /// Maximiert bzw. normalisiert übergebenes Formular
         /// </summary>
@@ -213,6 +262,8 @@ namespace MapMakingStudio
 
         #endregion
 
+
+
         /// <summary>
         /// Passt das panelTab-Usercontrol auf die aktuelle Größe an.
         /// </summary>
@@ -234,13 +285,12 @@ namespace MapMakingStudio
        
         private void bMinimize_Click(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Minimized;
+            MinimaizeAnimation.Start();
         }
         private void bMaximize_Click(object sender, EventArgs e)
         {
             maximizeWindow(this);
         }
-
         private void panel1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             maximizeWindow(this);
@@ -285,6 +335,18 @@ namespace MapMakingStudio
             FileExplorerControl1.contextMenuStrip1.Items["öffnenToolStripMenuItem"].Click += new EventHandler(fileExplorer1_openClickEvent);
         }
 
+        private void MapMakingStudio_Load(object sender, EventArgs e)
+        {
+            Opacity = 0;
+            MaximaizeAnimation.Start();
+        }
+
+        private void MapMakingStudio_Activated(object sender, EventArgs e)
+        {
+            Opacity = 0;
+            MaximaizeAnimation.Start();
+
+        }
 
 
         /// <summary>
@@ -387,6 +449,7 @@ namespace MapMakingStudio
             displayInfoWithClick(filePath, fileName, filePath, frmInfoBox.ClickEvents.Pic, openTexture);
    
         }
+
         /// <summary>
         /// Zeigt eine Info im Info-Bereich.
         /// </summary>
