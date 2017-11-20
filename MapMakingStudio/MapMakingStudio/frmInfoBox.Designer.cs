@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInfoBox));
             this.lbTitel = new System.Windows.Forms.Label();
             this.rtbInfoText = new System.Windows.Forms.RichTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bClose = new Bunifu.Framework.UI.BunifuImageButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bClose)).BeginInit();
             this.SuspendLayout();
             // 
             // lbTitel
@@ -70,12 +73,29 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // bClose
+            // 
+            this.bClose.BackColor = System.Drawing.Color.Transparent;
+            this.bClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bClose.ErrorImage = ((System.Drawing.Image)(resources.GetObject("bClose.ErrorImage")));
+            this.bClose.Image = ((System.Drawing.Image)(resources.GetObject("bClose.Image")));
+            this.bClose.ImageActive = null;
+            this.bClose.Location = new System.Drawing.Point(459, 11);
+            this.bClose.Name = "bClose";
+            this.bClose.Size = new System.Drawing.Size(35, 35);
+            this.bClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.bClose.TabIndex = 4;
+            this.bClose.TabStop = false;
+            this.bClose.Zoom = 10;
+            this.bClose.Click += new System.EventHandler(this.bClose_Click);
+            // 
             // frmInfoBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.bClose);
             this.Controls.Add(this.rtbInfoText);
             this.Controls.Add(this.lbTitel);
             this.Controls.Add(this.pictureBox1);
@@ -85,6 +105,7 @@
             this.Size = new System.Drawing.Size(503, 192);
             this.Load += new System.EventHandler(this.frmInfoBox_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,5 +116,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbTitel;
         private System.Windows.Forms.RichTextBox rtbInfoText;
+        private Bunifu.Framework.UI.BunifuImageButton bClose;
     }
 }

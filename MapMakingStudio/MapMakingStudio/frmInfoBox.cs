@@ -140,5 +140,9 @@ namespace MapMakingStudio
 
         }
 
+        private void bClose_Click(object sender, EventArgs e)
+        {
+            Hide();
+        }
     }
 }
