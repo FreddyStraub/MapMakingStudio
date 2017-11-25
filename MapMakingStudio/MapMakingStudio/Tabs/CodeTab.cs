@@ -14,6 +14,8 @@ namespace MapMakingStudio.Tabs
 {
     public partial class CodeTab : Form
     {
+
+        
         public CodeTab()
         {
             InitializeComponent();
@@ -49,8 +51,6 @@ namespace MapMakingStudio.Tabs
         Brush SunFlower = new SolidBrush(Color.FromArgb(255, 241, 196, 15));
         Brush Red = new SolidBrush(Color.FromArgb(255, 231, 76, 60));
         Brush Gray = new SolidBrush(Color.Gray);
-
-
 
         private void fastColoredTextBox1_TextChanged(object sender, FastColoredTextBoxNS.TextChangedEventArgs e)
         {

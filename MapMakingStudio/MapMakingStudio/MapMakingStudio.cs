@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MapMakingStudio.MenuBar;
+using MapMakingStudio.Tabs;
+using System.Diagnostics;
+using System.Threading;
 
 namespace MapMakingStudio
 {
@@ -23,12 +26,60 @@ namespace MapMakingStudio
             generatePanelTabsSize();
 
             MenuBar = new MenuBar.MenuBar(this);
+
+            closeAllTabs();
+
+            loadSettings();
+            assignEvents();
+
+            FileExplorerControl1.Path = FileExplorerPath;
+
+            Controls.Add(infoBox);
+
+
+        }
+
+        /// <summary>
+        /// Lädt UserSettings.
+        /// </summary>
+        private void loadSettings()
+        {
+            string appDataPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
+            Settings = new Settings();
+
+            if (!System.IO.Directory.Exists(appDataPath + "\\MapMakingStudio"))
+                System.IO.Directory.CreateDirectory(appDataPath + "\\MapMakingStudio");
+
+            if (System.IO.File.Exists(appDataPath + "\\MapMakingStudio\\Settings.wolf"))
+            {
+                Settings = Settings.Load( appDataPath + "\\MapMakingStudio\\Settings.wolf");
+
+            }
+            else
+            {
+
+                Settings newSettings = new Settings();
+                newSettings.setStandartSettings();
+                newSettings.Save(appDataPath + "\\MapMakingStudio\\Settings.wolf");
+
+                Settings = Settings.Load(appDataPath + "\\MapMakingStudio\\Settings.wolf");
+            }
+
+            FileExplorerPath = Settings.fileExplorerPath;
+
         }
 
         public enum Menus { Datei, Bearbeiten, Snippets, Suche, Einstellungen };
         public enum MenuStatus { Open, Close };
 
+        public frmInfoBox infoBox = new frmInfoBox("", "","");
+
         public MenuBar.MenuBar MenuBar;
+
+        string FileExplorerPath;
+
+        public Settings Settings { get; set; }
 
         #region Move Form
 
@@ -105,6 +156,54 @@ namespace MapMakingStudio
 
         #endregion
 
+        #region general Animations
+
+        /// <summary>
+        /// Minimaize Animation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MinimaizeAnimation_Tick(object sender, EventArgs e)
+        {
+            Opacity = Opacity - 0.1;
+
+            if (Opacity == 0)
+            {
+                MinimaizeAnimation.Stop();
+                WindowState = FormWindowState.Minimized;
+
+            }
+        }
+
+        /// <summary>
+        /// Maximaize Animation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MaximaizeAnimation_Tick(object sender, EventArgs e)
+        {
+
+            WindowState = FormWindowState.Normal;
+            
+
+            if (Opacity == 1)
+            {
+                MaximaizeAnimation.Stop();
+
+            }
+            else
+            {
+                Opacity = Opacity + 0.1;
+
+            }
+
+        }
+
+
+
+        #endregion
+
+
         /// <summary>
         /// Maximiert bzw. normalisiert übergebenes Formular
         /// </summary>
@@ -124,6 +223,8 @@ namespace MapMakingStudio
             }
         }
 
+        #region MenuBarClickEvents
+
         private void bDatei_Click(object sender, EventArgs e)
         {
             if (MenuBar.dateiMenuIsOpen)
@@ -136,8 +237,7 @@ namespace MapMakingStudio
 
             }
         }
-
-      private void bBearbeiten_Click(object sender, EventArgs e)
+        private void bBearbeiten_Click(object sender, EventArgs e)
         {
 
             if (MenuBar.bearbeitenMenuIsOpen)
@@ -156,8 +256,12 @@ namespace MapMakingStudio
 
         private void bEinstellungen_Click(object sender, EventArgs e)
         {
-            addTab();
+            FileExplorerControl1.Path = "C:\\Users\\Freddy Straub\\AppData\\Roaming";
         }
+
+
+        #endregion
+
 
 
         /// <summary>
@@ -171,43 +275,27 @@ namespace MapMakingStudio
 
             tabControl.Size = new Size(width, height);
         }
-
-        private void addTab()
-        {
-            Tabs.CodeTab ct = new Tabs.CodeTab()
-            {
-                TopLevel = false,
-                AutoScroll = true
-            };
-            //t.Controls.Add(ct);
-
-            ct.Dock = DockStyle.Fill;
-
-
-            ct.Show();
-
-
-      
-        }
+       
 
         private void bClose_Click(object sender, EventArgs e)
         {
             Close();
         }
+
+       
         private void bMinimize_Click(object sender, EventArgs e)
         {
-            WindowState = FormWindowState.Minimized;
+            MinimaizeAnimation.Start();
         }
         private void bMaximize_Click(object sender, EventArgs e)
         {
             maximizeWindow(this);
-
         }
-
         private void panel1_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             maximizeWindow(this);
         }
+
         private void MapMakingStudio_Resize(object sender, EventArgs e)
         {
             generatePanelTabsSize();
@@ -217,5 +305,200 @@ namespace MapMakingStudio
 
         }
 
+        private void mainTimer_Tick(object sender, EventArgs e)
+        {
+            setInfoBoxPosition();
+        }
+
+        /// <summary>
+        /// Schließt alle Tabs
+        /// </summary>
+        private void closeAllTabs()
+        {
+
+            foreach (TabPage t in tabControl.TabPages)
+            {
+                tabControl.TabPages.Remove(t);
+
+            }
+
+        }
+
+      
+        /// <summary>
+        /// Weißt die "externen" Events zu
+        /// </summary>
+        private void assignEvents()
+        {
+            //FileExplorer
+            FileExplorerControl1.NodeHoverPathChanged += new EventHandler(fileExplorer1_HoverPathChanged);
+            FileExplorerControl1.contextMenuStrip1.Items["öffnenToolStripMenuItem"].Click += new EventHandler(fileExplorer1_openClickEvent);
+        }
+
+        private void MapMakingStudio_Load(object sender, EventArgs e)
+        {
+            Opacity = 0;
+            MaximaizeAnimation.Start();
+        }
+
+        private void MapMakingStudio_Activated(object sender, EventArgs e)
+        {
+            Opacity = 0;
+            MaximaizeAnimation.Start();
+
+        }
+
+
+        /// <summary>
+        /// Öffnet Datei.
+        /// </summary>
+        /// <param name="Path">Pfad der Datei</param>
+        private void openFile(string Path)
+        {
+            if (System.IO.Path.GetExtension(Path) != "")
+            {
+                bool fileOpened = false;
+
+                foreach (TabPage tp in tabControl.TabPages)
+                {
+                    if (tp.Text == System.IO.Path.GetFileName(Path))
+                    {
+                        fileOpened = true;
+                    }
+              
+                }
+
+                if (fileOpened == false)
+                {
+                    //Wenn Datei noch nicht geöffnet
+                    string tabPageName = System.IO.Path.GetFileName(Path);
+                    CodeTabPage t = Tabs.Tabs.CreateNewCodeTabPage(tabPageName);
+
+                    System.IO.StreamReader sr = new System.IO.StreamReader(Path);
+                    string tcode = "";
+
+                    tcode += sr.ReadToEnd();
+
+                    sr.Close();
+
+                    t.fasColoredTextBox.Text = tcode;
+
+                    tabControl.TabPages.Add(t);
+                    tabControl.SelectTab(tabControl.TabPages.IndexOf(t));
+                }
+                else
+                {
+                    //Wenn Datei geöffnet
+                    foreach (TabPage tp in tabControl.TabPages)
+                    {
+                        if (tp.Text == System.IO.Path.GetFileName(Path))
+                        {
+                            tabControl.SelectedTab = tp;
+                        }
+
+                    }
+
+                }
+            }
+        }
+
+        #region FileExplorerEvents
+
+        private void fileExplorer1_HoverPathChanged(object sender, EventArgs e)
+        {
+            string fullPath = FileExplorerControl1.NodeHoverPath;
+            string fileExtention = System.IO.Path.GetExtension(fullPath);
+            
+
+            if (fileExtention.ToLower() == ".png" || fileExtention.ToLower() == ".jpg")
+            {
+                displayTexture(fullPath);
+                
+
+            }
+            else
+            {
+                if(infoBox != null)
+                    infoBox.Hide();
+            }
+        }
+        private void fileExplorer1_openClickEvent(object sender, EventArgs e)
+        {
+            string filePath = FileExplorerControl1.SelectedNodePath;
+            string fileExtention = System.IO.Path.GetExtension(filePath);
+
+            openFile(filePath);
+        }
+
+
+        #endregion
+
+        /// <summary>
+        /// Zeigt eine Textur in der textureBox an.
+        /// </summary>
+        /// <param name="filePath">Pfad zu Datei.</param>
+        private void displayTexture(string filePath)
+        {
+            string fileName = System.IO.Path.GetFileName(filePath);
+
+            Action openTexture = () =>
+            {
+                Process.Start(filePath);
+            };
+
+            displayInfoWithClick(filePath, fileName, filePath, frmInfoBox.ClickEvents.Pic, openTexture);
+   
+        }
+
+        /// <summary>
+        /// Zeigt eine Info im Info-Bereich.
+        /// </summary>
+        /// <param name="info"></param>
+        /// <param name="titel"></param>
+        /// <param name="pic"></param>
+        private void displayInfo(string info, string titel, string pic)
+        {
+
+            infoBox = new frmInfoBox(titel, info, pic);
+                        
+            Controls.Add(infoBox);
+
+            setInfoBoxPosition();
+
+            infoBox.BringToFront();
+
+
+            infoBox.Show();
+
+
+        }
+
+        private void displayInfoWithClick(string info, string titel, string pic, frmInfoBox.ClickEvents clickEvent, Action ev)
+        {
+
+            infoBox = new frmInfoBox(titel, info, pic, ev, clickEvent);
+
+            Controls.Add(infoBox);
+
+            setInfoBoxPosition();
+
+            infoBox.BringToFront();
+            
+            infoBox.Show();
+
+
+        }
+
+        /// <summary>
+        /// Ändert die Position der Infobox und passt sie an die Fenstergröße an.
+        /// </summary>
+        private void setInfoBoxPosition()
+        {
+            Point position = new Point(this.Width - infoBox.Width - 20, panelHeaderButtons.Height + 40);
+            infoBox.Location = position;
+
+        }
+
     }
 }
+

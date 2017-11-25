@@ -23,7 +23,7 @@ namespace MapMakingStudio.MenuBarSubMenus
         {
 
             MapMakingStudio mms = (MapMakingStudio)Application.OpenForms[0];
-            Tabs.Tabs.CreateNewTab(mms.tabControl);
+            mms.tabControl.TabPages.Add(Tabs.Tabs.CreateNewCodeTabPage("Test"));
         }
     }
 }
