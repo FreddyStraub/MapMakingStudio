@@ -33,7 +33,7 @@ namespace MapMakingStudio
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            BunifuAnimatorNS.Animation animation5 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MapMakingStudio));
             this.HeaderBar = new System.Windows.Forms.Panel();
             this.panelHeaderButtons = new System.Windows.Forms.Panel();
@@ -57,10 +57,10 @@ namespace MapMakingStudio
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.FileExplorerControl1 = new MMSFileExplorer.FileExplorerControl();
             this.mainTimer = new System.Windows.Forms.Timer(this.components);
             this.MaximaizeAnimation = new System.Windows.Forms.Timer(this.components);
             this.MinimaizeAnimation = new System.Windows.Forms.Timer(this.components);
-            this.FileExplorerControl1 = new MMSFileExplorer.FileExplorerControl();
             this.HeaderBar.SuspendLayout();
             this.panelHeaderButtons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bMinimize)).BeginInit();
@@ -410,22 +410,22 @@ namespace MapMakingStudio
             // 
             this.MenuBarAnimator.AnimationType = BunifuAnimatorNS.AnimationType.ScaleAndHorizSlide;
             this.MenuBarAnimator.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.MenuBarAnimator.DefaultAnimation = animation2;
+            animation5.AnimateOnlyDifferences = true;
+            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
+            animation5.LeafCoeff = 0F;
+            animation5.MaxTime = 1F;
+            animation5.MinTime = 0F;
+            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
+            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
+            animation5.MosaicSize = 0;
+            animation5.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            animation5.RotateCoeff = 0F;
+            animation5.RotateLimit = 0F;
+            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
+            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
+            animation5.TimeCoeff = 0F;
+            animation5.TransparencyCoeff = 0F;
+            this.MenuBarAnimator.DefaultAnimation = animation5;
             this.MenuBarAnimator.Interval = 1000;
             this.MenuBarAnimator.TimeStep = 0.1F;
             // 
@@ -487,6 +487,19 @@ namespace MapMakingStudio
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             // 
+            // FileExplorerControl1
+            // 
+            this.FileExplorerControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.MenuBarAnimator.SetDecoration(this.FileExplorerControl1, BunifuAnimatorNS.DecorationType.None);
+            this.FileExplorerControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.FileExplorerControl1.Location = new System.Drawing.Point(200, 61);
+            this.FileExplorerControl1.Name = "FileExplorerControl1";
+            this.FileExplorerControl1.NodeHoverPath = null;
+            this.FileExplorerControl1.Path = "C:\\Users\\Freddy Straub\\Documents";
+            this.FileExplorerControl1.SelectedNodePath = null;
+            this.FileExplorerControl1.Size = new System.Drawing.Size(219, 573);
+            this.FileExplorerControl1.TabIndex = 10;
+            // 
             // mainTimer
             // 
             this.mainTimer.Enabled = true;
@@ -502,19 +515,6 @@ namespace MapMakingStudio
             // 
             this.MinimaizeAnimation.Interval = 10;
             this.MinimaizeAnimation.Tick += new System.EventHandler(this.MinimaizeAnimation_Tick);
-            // 
-            // FileExplorerControl1
-            // 
-            this.FileExplorerControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.MenuBarAnimator.SetDecoration(this.FileExplorerControl1, BunifuAnimatorNS.DecorationType.None);
-            this.FileExplorerControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.FileExplorerControl1.Location = new System.Drawing.Point(200, 61);
-            this.FileExplorerControl1.Name = "FileExplorerControl1";
-            this.FileExplorerControl1.NodeHoverPath = null;
-            this.FileExplorerControl1.Path = "C:\\Users\\Freddy Straub\\Documents";
-            this.FileExplorerControl1.SelectedNodePath = null;
-            this.FileExplorerControl1.Size = new System.Drawing.Size(219, 573);
-            this.FileExplorerControl1.TabIndex = 10;
             // 
             // MapMakingStudio
             // 
